@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0, user-scalable=no">
+    <title>Setting</title>
+    <link href="resource/css/themes/default/jquery.mobile-1.2.0.css" rel="stylesheet"
+        type="text/css" />
+    <link href="resource/css/themes/ios_inspired/styles.css" rel="stylesheet" type="text/css" />
+    <link href="resource/css/jqm-datebox.min.css" rel="stylesheet" type="text/css" />
+    <link href="vendor/css/jquery.swipeButton-1.2.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="vendor/css/jquery-mobile-red-buttons.css" />
+    <link href="resource/css/custom.css" rel="stylesheet" type="text/css" />
+    <script src="vendor/xdate.js" type="text/javascript"></script>
+    <script src="vendor/xdate.i18n.js" type="text/javascript"></script>
+    <script src="vendor/jquery-1.8.2.min.js" type="text/javascript"></script>
+    <script src="vendor/jquery-ui-1.9.1.custom.min.js" type="text/javascript"></script>
+    <script src="vendor/jquery.mobile-1.2.0.js" type="text/javascript"></script>
+    <script src="vendor/jqm-datebox.core.min.js" type="text/javascript"></script>
+    <script src="vendor/jqm-datebox.mode.calbox.min.js" type="text/javascript"></script>
+    <script src="vendor/jquery.mobile.datebox.i18n.zh-CN.utf8.js" type="text/javascript"></script>
+    <script src="vendor/jquery.swipeButton-1.2.1.min.js" type="text/javascript"></script>
+    <script src="vendor/underscore.js" type="text/javascript"></script>
+    <script type="text/javascript" src="resource/js/accounting.js"></script>
+    <script src="vendor/cordova-2.5.0.js" type="text/javascript"></script>
+    <script src="vendor/highcharts.js" type="text/javascript"></script>
+    <script src="vendor/barcodescanner.js" type="text/javascript"></script>
+    <script src="resource/js/DbConnector.js" type="text/javascript"></script>
+    <script src="resource/js/BO.js" type="text/javascript"></script>
+    <script src="resource/js/Global.js" type="text/javascript"></script>
+    <script src="controller/farm_context.js" type="text/javascript"></script>
+    <script src="controller/stock_context.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $.Ctx.InitIndiviualPage();
+    </script>
+</head>
+<body>
+    <div data-role="page" id="setting">
+        <div data-role="header" data-position="fixed">
+            <a data-back="true" data-theme="a"><span id="labBack" data-lang='btnBack'>Back</span></a>
+            <h1>
+                <span id="captionHeader" data-lang='headerSetting'>Setting</span></h1>
+            <a data-role="button" data-icon="check" id='btnDone'><span data-lang='btnDone'>Done</a>
+            </a>
+        </div>
+        <!-- /header -->
+        <div data-role="content">
+            <div class="config-date" style="padding-left:30px; padding-right:30px">
+
+                <table id="j_4" class="mobilegrid1" dsid="mobilegrid3" name="mobilegrid3" cellpadding="0"
+                    cellspacing="0">
+                    <col style="width: 150px;">
+                    <col style="width: 25px;">
+                    <col style="width: 400px;">
+                    <tr>
+                        <td id="dpkConfig" name="mobilegridcell13" class="mobilegridcell1" colspan="1" rowspan="1">
+                            <div class="cell-wrapper">
+                                <div name="LableBusinessDate" style="font-weight: bold;" id="j_6" dsid="LableBusinessDate"
+                                    data-role="tiggr_label" class=' mobilelabel1 '>
+                                    <span id="lblBusinessDate" data-lang="lblBusinessDate">Business Date </span>
+                                </div>
+                            </div>
+                        </td>
+                        <td id="j_7" name="mobilegridcell14" class="mobilegridcell2" colspan="1" rowspan="1">
+                            <div class="cell-wrapper">
+                            </div>
+                        </td>
+                        <td id="j_9" name="mobilegridcell15" class="mobilegridcell3" colspan="1" rowspan="1">
+                            <div class="cell-wrapper" style="max-width: 190px">
+                                <input name="datefrom-text" id="datefrom-text" type="text" data-role="datebox" data-options='{"mode": "calbox", "calUsePickers": true, "calNoHeader": true}' />
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                    </tr>
+                </table>
+                <table id="Table1" class="mobilegrid1" dsid="mobilegrid3" name="mobilegrid3" cellpadding="0"
+                    cellspacing="0">
+                    <col style="width: 150px;">
+                    <col style="width: 25px;">
+                    <col style="width: 400px;">
+                    <tr>
+                        <td id="Td1" name="mobilegridcell13" class="mobilegridcell1" colspan="1" rowspan="1">
+                            <div class="cell-wrapper">
+                                <div name="LableBusinessDate" style="font-weight: bold;" id="Div1" dsid="LableBusinessDate"
+                                    data-role="tiggr_label" class=' mobilelabel1 '>
+                                    <span id="lblLanguage" data-lang="lblLanguage">Language </span>
+                                </div>
+                            </div>
+                        </td>
+                        <td id="Td2" name="mobilegridcell14" class="mobilegridcell2" colspan="1" rowspan="1">
+                            <div class="cell-wrapper">
+                            </div>
+                        </td>
+                        <td id="Td3" name="mobilegridcell15" class="mobilegridcell3" colspan="1" rowspan="1">
+                            <div class="cell-wrapper">
+                                <fieldset data-role="controlgroup" data-type="horizontal">
+                                    <input type="radio" name="lang" id="rdtEng" value="on" checked="checked" />
+                                    <label for="rdtEng">
+                                        <span id="lblEng" data-lang='lblEng'>English</span></label>
+                                    <input type="radio" name="lang" id="rdtChina" value="off" />
+                                    <label for="rdtChina">
+                                        <span id="lblChina" data-lang='lblChina'>Chinese</span></label>
+                                </fieldset>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                    </tr>
+                </table>
+                   <table id="Table6" class="mobilegrid1" dsid="mobilegrid3" name="mobilegrid3" cellpadding="0"
+                    cellspacing="0">
+                    <col style="width: 150px;">
+                    <col style="width: 25px;">
+                    <col style="width: 400px">
+                    <tr>
+                        <td id="Td10" name="mobilegridcell13" class="mobilegridcell1" colspan="1" rowspan="1">
+                            <div class="cell-wrapper">
+                                <div name="lblSecurity" style="font-weight: bold;" id="Div4" dsid="lblSecurity"
+                                    data-role="tiggr_label" class=' mobilelabel1 '>
+                                    <span id="lblSecurity" data-lang="lblSecurity">Security</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td id="Td11" name="mobilegridcell14" class="mobilegridcell2" colspan="1" rowspan="1">
+                            <div class="cell-wrapper">
+                            </div>
+                        </td>
+                        <td id="Td12" name="mobilegridcell15" class="mobilegridcell3" colspan="1" rowspan="1">
+                            <div class="cell-wrapper">
+                                <fieldset data-role="controlgroup">
+                                    <div id="Div5" style="max-width: 195px">
+                                        <a id="btnChangePass" data-role="button"><span data-lang="lblChangePass">Change Password</span></a>
+                                    </div>
+                                </fieldset>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                    </tr>
+                </table>
+                <table id="Table1" class="mobilegrid1" dsid="mobilegrid3" name="mobilegrid3" cellpadding="0"
+                    cellspacing="0">
+                    <col style="width: 150px;">
+                    <col style="width: 25px;">
+                    <col style="width: 400px">
+                    <tr>
+                        <td id="Td1" name="mobilegridcell13" class="mobilegridcell1" colspan="1" rowspan="1">
+                            <div class="cell-wrapper">
+                                <div name="labelTimeout" style="font-weight: bold;" id="Div1" dsid="labelTimeout"
+                                    data-role="tiggr_label" class=' mobilelabel1 '>
+                                    <span id="lblTimeout" data-lang="lblTimeout">Timeout (second)</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td id="Td2" name="mobilegridcell14" class="mobilegridcell2" colspan="1" rowspan="1">
+                            <div class="cell-wrapper">
+                            </div>
+                        </td>
+                        <td id="Td3" name="mobilegridcell15" class="mobilegridcell3" colspan="1" rowspan="1">
+                            <div class="cell-wrapper">
+                                <fieldset data-role="controlgroup">
+                                    <input type="range" name="SliderTimeout" id="SliderTimeout" min="3" max="20" value="3"
+                                        data-highlight="true">
+                                </fieldset>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                    </tr>
+                </table>
+             
+                <table id="Table2" class="mobilegrid1" dsid="mobilegrid3" name="mobilegrid3" cellpadding="0"
+                    cellspacing="0" style="padding-top:30px">
+
+
+                <ul data-role="listview" data-inset="true" >
+                    <li data-role="fieldcontain">
+                        <fieldset data-role="controlgroup">
+                            <div class="ui-grid-d">
+                                <div class="ui-block-a" >
+                                    <span id="lblOrgCode" data-lang="lblOrgCode">Org Code : </span>
+                                </div>
+                                <div class="ui-block-b" id="lblshowSubOper"></div>
+                            </div>                            
+                        </fieldset>
+                    </li>
+                    <li data-role="fieldcontain">
+                        <fieldset data-role="controlgroup">
+                            <div class="ui-grid-d">
+                                <div class="ui-block-a"><span id="lblFarmOrg" data-lang="lblFarmOrg">Farm Org : </span></div>
+                                <div class="ui-block-b" id="lblshowWarehouse"></div>
+                            </div>                            
+                        </fieldset>
+                    </li>
+                    <li data-role="fieldcontain">
+                        <fieldset data-role="controlgroup">
+                            <div class="ui-grid-d">
+                                <div class="ui-block-a"><span id="lblDeviceID" data-lang="lblDeviceID">Device ID : </span></div>
+                                <div class="ui-block-b" id="txtDeviceId"></div>
+                            </div>                            
+                        </fieldset>
+                    </li>
+                    <li data-role="fieldcontain">
+                        <fieldset data-role="controlgroup">
+                            <div class="ui-grid-d">
+                                <div class="ui-block-a"><span id="lblVersion" data-lang="lblVersion">Client Version :</span></div>
+                                <div class="ui-block-b" id="txtVersion"></div>
+                            </div>                            
+                        </fieldset>
+                    </li>
+                    <li data-role="fieldcontain">
+                        <fieldset data-role="controlgroup">
+                            <div class="ui-grid-d">
+                                <div class="ui-block-a"><span id="lblServerVersion" data-lang="lblServerVersion">Server Version :</span></div>
+                                <div class="ui-block-b" id="txtServerVersion"></div>
+                            </div>
+                        </fieldset>
+                    </li>
+                </ul>
+                    <script>
+                        function callDiag(){
+                            cordova.exec(function(ret){}, function(err){}, "BKPlugins", "callExpertTools", [JSON.stringify($.Ctx)]);
+                        }
+                        </script>
+                    <a  onclick="callDiag()">Report Issues</a>
+
+            </div>
+        </div>
+        <script type="text/javascript" src="controller/setting.js"></script>
+    </div>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Environment Detail</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+   <link href="resource/css/themes/default/jquery.mobile-1.2.0.css" rel="stylesheet" type="text/css" />
+    <link href="resource/css/themes/ios_inspired/styles.css" rel="stylesheet" type="text/css" />
+	<link href="resource/css/jqm-datebox.min.css" rel="stylesheet" type="text/css" />
+    <link href="vendor/css/jquery.swipeButton-1.2.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="vendor/css/jquery-mobile-red-buttons.css" />
+	<link href="resource/css/custom.css" rel="stylesheet" type="text/css" />
+  
+    <script src="vendor/xdate.js" type="text/javascript"></script>
+    <script src="vendor/xdate.i18n.js" type="text/javascript"></script>
+    <script src="vendor/jquery-1.8.2.min.js" type="text/javascript"></script>
+    <script src="vendor/jquery-ui-1.9.1.custom.min.js" type="text/javascript"></script>
+    <script src="vendor/jquery.mobile-1.2.0.js" type="text/javascript"></script>
+	<script src="vendor/jqm-datebox.core.min.js" type="text/javascript"></script>
+    <script src="vendor/jqm-datebox.mode.calbox.min.js" type="text/javascript"></script>
+    <script src="vendor/jquery.swipeButton-1.2.1.min.js" type="text/javascript"></script>
+    <script src="vendor/underscore.js" type="text/javascript"></script>
+    <script type="text/javascript" src="resource/js/accounting.js"></script>
+    <script src="vendor/cordova-2.5.0.js" type="text/javascript"></script>
+    <script src="vendor/highcharts.js" type="text/javascript"></script>
+    <script src="vendor/barcodescanner.js" type="text/javascript"></script>
+    <script src="resource/js/DbConnector.js" type="text/javascript"></script>
+    <script src="resource/js/BO.js" type="text/javascript"></script>
+    <script src="resource/js/Global.js" type="text/javascript"></script>
+    <script src="controller/farm_context.js" type="text/javascript"></script>
+    <script src="controller/stock_context.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $.Ctx.InitIndiviualPage();
+    </script>
+</head>
+<body>
+    <div data-role="page" id="environment_detail">
+        <!--header page -->
+        <header data-role="header" data-position="fixed">
+        <a data-back="true" data-theme="a"><span id="labBack" data-lang="btnBack">Back</span></a>
+
+        <h1><span id="captionHeader" data-lang='headerEnviromentDetail'>Enviroment</span></h1>
+
+        <a   data-role="button"  data-icon="check" id='btnSave'><span id="labSave" data-lang='btnSave'>save</span></a>
+    </header>
+        <section class="page-content" data-role="content">
+            <div>
+               
+                <div class="ui-grid-a">
+                    <div class="ui-block-a" style="font-weight: bold;">
+                        <span data-lang="lblFarmOrg" class="caption">Farm Org</span>
+                    </div>
+                   
+                    <div class="ui-block-b">
+                       <a id="lkFarmOrg" data-role="button" data-icon="search" data-iconpos="right"><span data-lang="lkSelect">Select</span></a>
+                    </div>
+                </div>  
+
+                  <div class="ui-grid-b">
+                    <div class="ui-block-a" style="font-weight: bold;">
+                        <span data-lang="lblInsideTemp" class="caption" id="lblInsideTemp">Inside Temp.</span>
+                    </div>
+                    <div class="ui-block-b" style="padding-right:7.5px">
+                        <input type="number" id="txtInsideTempMin" tabindex="5" data-theme='b' placeholder="Min"/>
+                    </div>
+                    <div class="ui-block-c" style="padding-left:7.5px">
+                        <input type="number" id="txtInsideTempMax" tabindex="5" data-theme='b' placeholder="Max"/>
+                    </div>
+                </div>  
+
+                  <div class="ui-grid-b">
+                    <div class="ui-block-a" style="font-weight: bold;">
+                        <span data-lang="lblOutsideTemp" class="caption" id="lblOutsideTemp">Outside Temp.</span>
+                    </div>
+                    <div class="ui-block-b" style="padding-right:7.5px">
+                        <input type="number" id="txtOutsideTempMin" tabindex="5" data-theme='b' placeholder="Min"/>
+                    </div>
+                    <div class="ui-block-c" style="padding-left:7.5px">
+                        <input type="number" id="txtOutsideTempMax" tabindex="5" data-theme='b' placeholder="Max"/>
+                    </div>
+                </div>  
+
+                  <div class="ui-grid-b">
+                    <div class="ui-block-a" style="font-weight: bold;"> 
+                        <span data-lang="lblHumidity" class="caption" id="lblHumidity">Humidity</span>
+                    </div>
+                    <div class="ui-block-b" style="padding-right:7.5px">
+                        <input type="number" id="txtHumidityMin" tabindex="5" data-theme='b' placeholder="Min"/>
+                    </div>
+                    <div class="ui-block-c" style="padding-left:7.5px">
+                        <input type="number" id="txtHumidityMax" tabindex="5" data-theme='b' placeholder="Max"/>
+                    </div>
+                </div>  
+
+                  <div class="ui-grid-b">
+                    <div class="ui-block-a" style="font-weight: bold;">
+                        <span data-lang="lblStaticPressure" class="caption" id="lblStaticPressure">Static Pressure</span>
+                    </div>
+                    <div class="ui-block-b" style="padding-right:7.5px">
+                        <input type="number" id="txtStaticPressureMin" tabindex="5" data-theme='b' placeholder="Min"/>
+                    </div>
+                    <div class="ui-block-c" style="padding-left:7.5px">
+                        <input type="number" id="txtStaticPressureMax" tabindex="5" data-theme='b' placeholder="Max"/>
+                    </div>
+                </div>  
+
+                  <div class="ui-grid-b">
+                    <div class="ui-block-a" style="font-weight: bold;">
+                        <span data-lang="lblLight" class="caption" id="lblLight">Light</span>
+                    </div>
+                    <div class="ui-block-b">                        
+                    </div>
+                    <div class="ui-block-c" style="padding-left:7.5px">
+                        <input type="number" id="txtLight" tabindex="5" data-theme='b'/>
+                    </div>
+                </div>  
+
+                  <div class="ui-grid-b">
+                    <div class="ui-block-a" style="font-weight: bold;">
+                        <span data-lang="lblWaterUse" class="caption" id="lblWaterUse">Water Use</span>
+                    </div>
+                    <div class="ui-block-b">                        
+                    </div>
+                    <div class="ui-block-c" style="padding-left:7.5px">
+                        <input type="number" id="txtWaterUse" tabindex="5" data-theme='b'/>
+                    </div>
+                </div>  
+            </div>
+        </section>
+        <div data-role="footer" data-position="fixed">
+        </div>
+        <script src="controller/environment_detail.js" type="text/javascript"></script>
+    </div>
+</body>
+</html>

@@ -1,0 +1,150 @@
+<html>
+<head>
+    <title>Receive Medical Trans</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="resource/css/themes/default/jquery.mobile-1.2.0.css" rel="stylesheet"
+        type="text/css" />
+    <link href="resource/css/themes/ios_inspired/styles.css" rel="stylesheet" type="text/css" />
+    <link href="resource/css/jqm-datebox.min.css" rel="stylesheet" type="text/css" />
+    <link href="vendor/css/jquery.swipeButton-1.2.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="vendor/css/jquery-mobile-red-buttons.css" />
+    <link href="resource/css/custom.css" rel="stylesheet" type="text/css" />
+
+    <script src="vendor/xdate.js" type="text/javascript"></script>
+    <script src="vendor/xdate.i18n.js" type="text/javascript"></script>
+    <script src="vendor/jquery-1.8.2.min.js" type="text/javascript"></script>
+    <script src="vendor/jquery-ui-1.9.1.custom.min.js" type="text/javascript"></script>
+    <script src="vendor/jquery.mobile-1.2.0.js" type="text/javascript"></script>
+    <script src="vendor/jqm-datebox.core.min.js" type="text/javascript"></script>
+    <script src="vendor/jqm-datebox.mode.calbox.min.js" type="text/javascript"></script>
+    <script src="vendor/jquery.mobile.datebox.i18n.zh-CN.utf8.js" type="text/javascript"></script>
+    <script src="vendor/jquery.swipeButton-1.2.1.min.js" type="text/javascript"></script>
+    <script src="vendor/underscore.js" type="text/javascript"></script>
+    <script type="text/javascript" src="resource/js/accounting.js"></script>
+    <script src="vendor/cordova-2.5.0.js" type="text/javascript"></script>
+    <script src="vendor/highcharts.js" type="text/javascript"></script>
+    <script src="vendor/barcodescanner.js" type="text/javascript"></script>
+    <script src="resource/js/DbConnector.js" type="text/javascript"></script>
+    <script src="resource/js/BO.js" type="text/javascript"></script>
+    <script src="resource/js/Global.js" type="text/javascript"></script>
+    <script src="controller/farm_context.js" type="text/javascript"></script>
+    <script src="controller/stock_context.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $.Ctx.InitIndiviualPage();
+    </script>
+</head>
+<body>
+    <div id="receive_medical_trans" data-role="page">
+        <div data-role="header" data-position="fixed">
+            <!-- /header -->
+            <a href="#" data-role="button" data-theme="a" data-back="true" id="btnBack">
+                <span id="btnBackText" data-lang='btnBackText'>Back</span>
+            </a>
+            <!--backbtn-->
+            <h1><span id="captionHeader">Receive Medical</span></h1>
+            <a href="" id="btnSave" data-role="button" data-icon="check">
+                <span id="btnSaveText" data-lang='btnSaveText'>Save</span>
+            </a>
+        </div>
+        <div id="receive_medical_trans-content" data-role="content">
+            <div id="lblMode" style="margin-top: -7"></div>
+            <ul data-role="listview" data-inset="true" id="input-Sales" style="margin-top: 0">
+                <li data-role="fieldcontain">
+                    <fieldset data-role="controlgroup">
+                        <legend><span id="lblRefDocNo" data-lang='lblRefDocNo'>Ref Doc-NO.</span></legend>
+                        <!--<input type="text" id="" data-lang='txtRefDoc' maxlength="20"  style="width:100%" />
+                        <span id="refDocField" >
+                        <button id="" data-role="button" data-icon="search" data-iconpos="right" >
+							<span id="lblSelectRefDoc" data-lang='lblSelect'>Select</span>
+						</button>
+                        </span>-->
+                        <div>
+                            <table class="ui-responsive" style="width: 100%;">
+                                <tr>
+                                    
+                                        <button id="lpRefDoc" data-role="button" data-icon="search" data-iconpos="right">
+                                            <span
+                                                id="Span1" data-lang='btnRefDoc'>Select</span></button></td>
+                                </tr>
+                            </table>
+
+
+                        </div>
+                    </fieldset>
+                </li>
+
+                <li data-role="fieldcontain">
+                    <fieldset data-role="controlgroup">
+                        <legend><span id="lblProduct" data-lang='lblProduct'>Product:</span></legend>
+                        <button id="lpProduct" data-role="button"  data-iconpos="right">
+                            <span id="lblSelectP" data-lang='lblSelect'>Select</span>
+                        </button>
+                    </fieldset>
+                </li>
+
+
+                <li data-role="fieldcontain">
+                    <fieldset data-role="controlgroup">
+                        <legend><span id="lblFarmOrg" data-lang='lblFarmOrg'>Farm Org.</span></legend>
+                        <button id="lpFarmOrg" data-role="button" data-icon="search" data-iconpos="right">
+                            <span id="lblSelectFarmOrg" data-lang='lblSelect'>Select</span>
+                        </button>
+                    </fieldset>
+                </li>
+                <li data-role="fieldcontain">
+                    <!--strong><span id="lblQuantity" data-lang='lblQuantity'>Quantity:</span></strong-->
+                    <div class="ui-grid-a">
+                        <div class="ui-block-a">
+                            <div data-role="fieldcontain">
+                                <fieldset data-role="controlgroup">
+                                    <legend><span id="lblQuantity" data-lang='lblQuantity'>Quantity:</span></legend>
+                                    <input type="number" id="txtqty" min="0" />
+                                    <label id = "availableQty" >0</label>
+                                </fieldset>
+                            </div>
+                        </div>
+                        <div class="ui-block-b">
+                            <div data-role="fieldcontain">
+                                <fieldset data-role="controlgroup">
+                                    <legend><span id="lblweight" data-lang='lblweight'>Weight:</span></legend>
+                                    <input type="number" id="txtWeight" min="0" />
+                                    <label id = "availableWgh" >0</label>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li data-role="fieldcontain" id="blockUnitAndAmt" style="display:none;">
+                    <div class="ui-grid-a" style="margin-top: -10px; margin-bottom: -10px">
+                        <div class="ui-block-a">
+                            <div data-role="fieldcontain">
+                                <fieldset data-role="controlgroup">
+                                    <legend><span id="lblTotalWeight" data-lang="lblTotalWeight">Unit:</span></legend>
+                                    <input type="number" id="txtUnit" min="0" />
+                                </fieldset>
+                            </div>
+                        </div>
+                        <div class="ui-block-b" id="blockTotalAmount">
+                            <div data-role="fieldcontain">
+                                <fieldset data-role="controlgroup">
+                                    <legend><span id="lblTotalAmount" data-lang="lblTotalAmount">Total Amount:</span></legend>
+                                    <input type="number" id="total-amt" min="0" />
+                                </fieldset>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div data-role="footer" data-position="fixed">
+        </div>
+        <script src="controller/receive_medical_trans.js" type="text/javascript"></script>
+    </div>
+    <script>
+        
+        
+    </script>
+    <!-- End Page div id="receive_medical_trans" -->
+</body>
+</html>

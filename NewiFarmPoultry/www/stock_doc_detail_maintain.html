@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <title>stock_doc_detail_maintain</title>
+   <link href="resource/css/themes/default/jquery.mobile-1.2.0.css" rel="stylesheet" type="text/css" />
+    <link href="resource/css/themes/ios_inspired/styles.css" rel="stylesheet" type="text/css" />
+	<link href="resource/css/jqm-datebox.min.css" rel="stylesheet" type="text/css" />
+    <link href="vendor/css/jquery.swipeButton-1.2.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="vendor/css/jquery-mobile-red-buttons.css" />
+	<link href="resource/css/custom.css" rel="stylesheet" type="text/css" />
+  
+    <script src="vendor/xdate.js" type="text/javascript"></script>
+    <script src="vendor/xdate.i18n.js" type="text/javascript"></script>
+    <script src="vendor/jquery-1.8.2.min.js" type="text/javascript"></script>
+    <script src="vendor/jquery-ui-1.9.1.custom.min.js" type="text/javascript"></script>
+    <script src="vendor/jquery.mobile-1.2.0.js" type="text/javascript"></script>
+	<script src="vendor/jqm-datebox.core.min.js" type="text/javascript"></script>
+    <script src="vendor/jqm-datebox.mode.calbox.min.js" type="text/javascript"></script>
+    <script src="vendor/jquery.swipeButton-1.2.1.min.js" type="text/javascript"></script>
+    <script src="vendor/underscore.js" type="text/javascript"></script>
+    <script type="text/javascript" src="resource/js/accounting.js"></script>
+    <script src="vendor/cordova-2.5.0.js" type="text/javascript"></script>
+    <script src="vendor/highcharts.js" type="text/javascript"></script>
+    <script src="vendor/barcodescanner.js" type="text/javascript"></script>
+    <script src="resource/js/DbConnector.js" type="text/javascript"></script>
+    <script src="resource/js/BO.js" type="text/javascript"></script>
+    <script src="resource/js/Global.js" type="text/javascript"></script>
+    <script src="controller/farm_context.js" type="text/javascript"></script>
+    <script src="controller/stock_context.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $.Ctx.InitIndiviualPage();
+        $.StockCtx.RetrieveLocalStorage();
+    </script>
+</head>
+<body>
+    <!-- Login -->
+    <div data-role="page" id="stock_doc_detail_maintain">
+        <div data-role="header" data-position="fixed" data-mini="false">
+            <a data-back="true" data-theme="a"><span id="labBack" data-lang="btnBack">Back</span></a>
+            <h1 data-lang="titleStockDetailMaintain">
+                <span id="lblStockBalance" data-lang="lblStockBalance">Stock Balance</span></h1>
+        </div>
+        <!-- /header -->
+        <div data-role="content" data-theme="c" id="stock-detail-view">
+            <div data-role="fieldcontain" style="padding-top: 0px;">
+                <div class="ui-grid-a" id="product-grid">
+                    <div class="ui-block-a">
+                        <span data-lang="lblProduct">Product</span>
+                    </div>
+                    <div class="ui-block-b">
+                        <strong><span id="product-selected-lab">xxxx</span></strong>
+                    </div>
+                </div>
+            </div>
+            <div data-role="fieldcontain">
+                <div class="ui-grid-a" id="lot-grid">
+                    <div class="ui-block-a">
+                        <span data-lang="lblLot">Lot</span>
+                    </div>
+                    <div class="ui-block-b">
+                        <strong><span id="lot-selected-lab">xxxx</span></strong>
+                    </div>
+                </div>
+            </div>
+            <div data-role="fieldcontain">
+                <div class="ui-grid-a" id="sublot-grid">
+                    <div class="ui-block-a">
+                        <span data-lang="lblSublot">Sub Lot</span>
+                    </div>
+                    <div class="ui-block-b">
+                        <strong><span id="sublot-selected-lab">xxxx</span></strong>
+                    </div>
+                </div>
+            </div>
+            <div data-role="fieldcontain">
+                <div class="ui-grid-a" id="productiondate-grid">
+                    <div class="ui-block-a">
+                        <span data-lang="lblProductionDate">Production Date</span>
+                    </div>
+                    <div class="ui-block-b">
+                        <strong><span id="productiondate-selected-lab">xxxx</span></strong>
+                    </div>
+                </div>
+            </div>
+            <div data-role="fieldcontain">
+                <div class="ui-grid-a" id="expiredate-grid">
+                    <div class="ui-block-a">
+                        <span data-lang="lblExpireDate">Expire Date</span>
+                    </div>
+                    <div class="ui-block-b">
+                        <strong><span id="expiredate-selected-lab">xxxx</span></strong>
+                    </div>
+                </div>
+            </div>
+            <div data-role="fieldcontain">
+                <div class="ui-grid-a" id="receiveddate-grid">
+                    <div class="ui-block-a">
+                        <span data-lang="lblReceivedDate">Received Date</span>
+                    </div>
+                    <div class="ui-block-b">
+                        <strong><span id="receiveddate-selected-lab">xxxx</span></strong>
+                    </div>
+                </div>
+            </div>
+           
+            <div data-role="fieldcontain">
+                <div class="ui-grid-a" id="labor-grid">
+                    <div class="ui-block-a">
+                        <span data-lang="lblLabor">Labor</span>
+                    </div>
+                    <div class="ui-block-b">
+                        <strong><span id="labor-selected-lab">xxxx</span></strong>
+                    </div>
+                </div>
+            </div>
+            <div data-role="fieldcontain">
+                <div class="ui-grid-a" id="quantity-grid">
+                    <div class="ui-block-a">
+                        <span data-lang="lblQuantity">Quantity</span>
+                    </div>
+                    <div class="ui-block-b">
+                        <strong><span id="quantity-selected-lab">xxxx</span></strong>
+                    </div>
+                </div>
+            </div>
+            <div data-role="fieldcontain">
+                <div class="ui-grid-a" id="weight-grid">
+                    <div class="ui-block-a">
+                        <span data-lang="lblWeight">Weight</span>
+                    </div>
+                    <div class="ui-block-b">
+                        <strong><span id="weight-selected-lab">xxxx</span></strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Add Panel--->
+        <div data-role="content" data-theme="d" id="stock-detail-add">
+            <div class="ui-grid-a" id="product-grid-add">
+                <div class="ui-block-a">
+                    <span data-lang="lblProduct" class="caption">Product</span>
+                </div>
+                <div class="ui-block-b">
+                    <input type="text" id="product-txt" value="" data-theme="a" />
+                </div>
+            </div>
+            <div class="ui-grid-a" id="lot-grid-add">
+                <div class="ui-block-a">
+                    <span data-lang="lblLot" class="caption">Lot</span>
+                </div>
+                <div class="ui-block-b">
+                    <input type="text" id="lot-txt" value="" data-theme="a" />
+                </div>
+            </div>
+            <div class="ui-grid-a" id="sublot-grid-add">
+                <div class="ui-block-a">
+                    <span data-lang="lblSublot" class="caption">Sub Lot</span>
+                </div>
+                <div class="ui-block-b">
+                    <input type="text" id="sublot-txt" value="" data-theme="a" />
+                </div>
+            </div>
+            <div class="ui-grid-a" id="productiondate-grid-add">
+                <div class="ui-block-a">
+                    <span data-lang="lblProductionDate" class="caption">Production Date</span>
+                </div>
+                <div class="ui-block-b">
+                    <input type="text" id="productiondate-txt" value="" data-theme="a" />
+                </div>
+            </div>
+            <div class="ui-grid-a" id="expiredate-grid-add">
+                <div class="ui-block-a">
+                    <span data-lang="lblExpireDate" class="caption">Expire Date</span>
+                </div>
+                <div class="ui-block-b">
+                    <input type="text" id="expiredate-txt" value="" data-theme="a" />
+                </div>
+            </div>
+            <div class="ui-grid-a" id="receiveddate-grid-add">
+                <div class="ui-block-a">
+                    <span data-lang="lblReceivedDate" class="caption">Received Date</span>
+                </div>
+                <div class="ui-block-b">
+                    <input type="text" id="receiveddate-txt" value="" data-theme="a" />
+                </div>
+            </div>
+  
+            <div class="ui-grid-a" id="labor-grid-add">
+                <div class="ui-block-a">
+                    <span data-lang="lblLabor" class="caption">Labor</span>
+                </div>
+                <div class="ui-block-b">
+                    <button id="labor-btn" data-role="button" data-icon="search" data-iconpos="right"
+                        data-theme="b">
+                        <span data-lang="lblChooseitem" class="caption">Choose item</span></button>
+                </div>
+            </div>
+            <div class="ui-grid-a" id="quantity-grid-add">
+                <div class="ui-block-a">
+                    <span data-lang="lblQuantity" class="caption">Quantity</span>
+                </div>
+                <div class="ui-block-b">
+                    <div class="ui-grid-a">
+                        <div class="ui-block-a">
+                            <input type="number" id="maxquantity-number" value="100" data-theme="a" style="text-align: right" />
+                        </div>
+                        <div class="ui-block-b">
+                            <input type="number" id="quantity-number" value="0" style="text-align: right" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ui-grid-a" id="weight-grid-add">
+                <div class="ui-block-a">
+                    <span data-lang="lblWeight" class="caption">Weight</span>
+                </div>
+                <div class="ui-block-b">
+                    <div class="ui-grid-a">
+                        <div class="ui-block-a">
+                            <input type="number" id="maxweight-number" value="100" data-theme="a" style="text-align: right" />
+                        </div>
+                        <div class="ui-block-b">
+                            <input type="number" id="weight-number" value="0" style="text-align: right" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar" class="nav-footer" data-grid="a">
+                <ul>
+                    <li><a id="confirm-footer-btn" data-icon="custom"><span data-lang="lblConfirm" class="caption">Confirm</span></a></li>
+                    <li><a id="delete-footer-btn" data-icon="custom"><span data-lang="lblDelete" class="caption">Delete</span></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <script src="controller/stock_doc_detail_maintain.js" type="text/javascript"></script>
+    </div>
+</body>
+</html>

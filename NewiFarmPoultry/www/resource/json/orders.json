@@ -1,0 +1,8 @@
+﻿[{"order_id":"20011010","customer_id":"cus001","products":[{"id":"p001","name":"เกี๊ยวกุ้งจัมโบ้รสต้มยำ 168 กรัม","detail":"product detail:code price weight unit","price":"100","unit":"ซอง","picture":"/../../../../Temp/1.jpg"},
+							   {"id":"p002","name":"เกี๊ยวซ่าหมูตราซีพี 90 กรัม","detail":"product detail:code price weight unit","price":"200","unit":"ซอง","picture":"/../../../../Temp/2.jpg"},
+							   {"id":"p003","name":"แฟรงค์หมูรมควัน 300 กรัม","detail":"product detail:code price weight unit","price":"140","unit":"ซอง","picture":"/../../../../Temp/3.jpg"},
+							   {"id":"p004","name":"ไก่อบกระเทียมพร้อมข้าวเหนียว 120 กรัม","detail":"product detail:code price weight unit","price":"20","unit":"ซอง","picture":"/../../../../Temp/4.jpg"}
+
+		
+							   ]
+}]

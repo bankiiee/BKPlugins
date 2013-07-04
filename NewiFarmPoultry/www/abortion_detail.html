@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Abortion Detail</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+   <link href="resource/css/themes/default/jquery.mobile-1.2.0.css" rel="stylesheet" type="text/css" />
+    <link href="resource/css/themes/ios_inspired/styles.css" rel="stylesheet" type="text/css" />
+	<link href="resource/css/jqm-datebox.min.css" rel="stylesheet" type="text/css" />
+    <link href="vendor/css/jquery.swipeButton-1.2.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="vendor/css/jquery-mobile-red-buttons.css" />
+	<link href="resource/css/custom.css" rel="stylesheet" type="text/css" />
+  
+    <script src="vendor/xdate.js" type="text/javascript"></script>
+    <script src="vendor/xdate.i18n.js" type="text/javascript"></script>
+    <script src="vendor/jquery-1.8.2.min.js" type="text/javascript"></script>
+    <script src="vendor/jquery-ui-1.9.1.custom.min.js" type="text/javascript"></script>
+    <script src="vendor/jquery.mobile-1.2.0.js" type="text/javascript"></script>
+	<script src="vendor/jqm-datebox.core.min.js" type="text/javascript"></script>
+    <script src="vendor/jqm-datebox.mode.calbox.min.js" type="text/javascript"></script>
+    <script src="vendor/jquery.swipeButton-1.2.1.min.js" type="text/javascript"></script>
+    <script src="vendor/underscore.js" type="text/javascript"></script>
+    <script type="text/javascript" src="resource/js/accounting.js"></script>
+    <script src="vendor/cordova-2.5.0.js" type="text/javascript"></script>
+    <script src="vendor/highcharts.js" type="text/javascript"></script>
+    <script src="vendor/barcodescanner.js" type="text/javascript"></script>
+    <script src="resource/js/DbConnector.js" type="text/javascript"></script>
+    <script src="resource/js/BO.js" type="text/javascript"></script>
+    <script src="resource/js/Global.js" type="text/javascript"></script>
+    <script src="controller/farm_context.js" type="text/javascript"></script>
+    <script src="controller/stock_context.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $.Ctx.InitIndiviualPage();
+    </script>
+</head>
+<body>
+   
+    <div data-role="page" id="abortion_detail">
+        <!--header page -->
+        <header data-role="header" data-position="fixed">
+            <a data-back="true" data-theme="a"><span id="labBack" data-lang='btnBack'>Back</span></a>
+            <h1><span id="captionHeader" data-lang='headerAbortionInfo'>Abortion Info</span></h1>
+            <a   data-role="button"  data-icon="check" id='btnSave'><span id="labSave" data-lang='btnSave'>save</a>
+        </header>
+        <div data-role="content" id="j_3" name="mobilecontainer1" class="mobilecontainer1"
+            dsid="mobilecontainer1">               
+           
+          <div class="mobilegrid1_wrapper">
+                <table id="j_4" class="mobilegrid1" dsid="mobilegrid3" name="mobilegrid3" cellpadding=0 cellspacing=0>
+                    <col style="width: 100px;">
+                    <col style="width: 30px;">
+                    <col style="width: 46%;">
+                    <col style="width: 30px;">
+                    <col style="width: 250px;">
+                    <tr>
+                        <td id="j_5" name="mobilegridcell13" class="mobilegridcell1" colspan=1 rowspan=1>
+                            <div class="cell-wrapper">
+                                <div name="LableSowID" style = "font-weight: bold;"id="j_6" dsid="LableSowID" data-role="tiggr_label" class=' mobilelabel1 '>
+                                    <span id="lblSowId" data-lang="lblSowId">Sow ID</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td id="j_7" name="mobilegridcell14" class="mobilegridcell2" colspan=1 rowspan=1>
+                            <div class="cell-wrapper">
+                                <div data-role="fieldcontain" class="mobiletextinput1">
+                                        
+                                </div>
+                            </div>
+                        </td>
+                        <td id="j_9" name="mobilegridcell15" class="mobilegridcell3" colspan=1 rowspan=1>
+                            <div class="cell-wrapper">
+                                <div class="mobilebutton1_wrapper ">
+                                    <a  id="lkSowId" data-role="button" data-icon="search" data-iconpos="right"><span  data-lang="lkSelect">Select</span></a>
+                                </div>
+                            </div>
+                        </td>
+                        <td></td>
+                        <td id="Td1" name="mobilegridcell15" class="mobilegridcell3" colspan=1 rowspan=1>
+                            <div class="cell-wrapper">
+                                <div class="mobilebutton1_wrapper ">
+                                    <div id="lblLastAct" style="float:left"></div>
+                                    &nbsp;&nbsp;&nbsp;<div id="lblLastDate" style="float:left;margin-left:20px"></div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+			<div data-role="fieldcontain"  style= "border-top:1px solid gray " > 
+				<br>
+                <div name="LabelPiglet" style = "font-weight: bold;" id="j_11" dsid="LabelPiglet" data-role="tiggr_label" class=' mobilelabel2 '>
+                    <span id="labSowInfo" data-lang='lblSowInfo'>Sow Info :</span>
+                </div>
+				 <div class="mobilegrid1_wrapper">
+                    <table id="j_4" class="mobilegrid1" dsid="mobilegrid3" name="mobilegrid3" cellpadding=0
+                    cellspacing=0>
+                    <col style="width: 100px;">
+                    <col style="width: 30px;">
+                    <col style="width: 46%;">
+                    <col style="width: 30px;">
+                    <col style="width: 250px;">
+                    <tr>
+                        <td id="j_5" name="mobilegridcell13" class="mobilegridcell1" colspan=1 rowspan=1>
+                            <div class="cell-wrapper">
+                                <div name="LableAbtType" id="j_66" dsid="LableAbtType" data-role="tiggr_label" placeholder=""
+                                class=' mobilelabel1 '>
+                                    <span id="lblAbtType" data-lang='lblAbtType'>Abortion Type</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td id="j_77" name="mobilegridcell14" class="mobilegridcell2" colspan=1 rowspan=1>
+                            <div class="cell-wrapper">
+                                <div data-role="fieldcontain" class="mobiletextinput1">
+                                                
+                                </div>
+                            </div>
+                        </td>
+                        <td id="j_9" name="mobilegridcell15" class="mobilegridcell3" colspan=1 rowspan=1>
+                            <div class="cell-wrapper">
+                                <div class="mobilebutton1_wrapper ">                                                    
+                                        <a  id="lkAbtType" data-role="button" data-icon="search" data-iconpos="right"><span  data-lang="lkSelect">Select</span></a>
+                                </div>
+                            </div>
+                        </td>
+                        <td></td><td></td>
+                    </tr>
+						<tr>
+                        <td id="j_55" name="mobilegridcell13" class="mobilegridcell1" colspan=1 rowspan=1>
+                            <div class="cell-wrapper">
+                                <div name="LableReason" id="j_555" dsid="LableReason" data-role="tiggr_label" placeholder=""
+                                class=' mobilelabel1 '>
+                                    <span id="lblReason" data-lang='lblReason'>Reason Code</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td id="j_777" name="mobilegridcell14" class="mobilegridcell2" colspan=1 rowspan=1>
+                            <div class="cell-wrapper">
+                                <div data-role="fieldcontain" class="mobiletextinput1">
+                                                    
+                                </div>
+                            </div>
+                        </td>
+                        <td id="j_9" name="mobilegridcell15" class="mobilegridcell3" colspan=1 rowspan=1>
+                            <div class="cell-wrapper">
+                                <div class="mobilebutton1_wrapper ">
+                                    <a  id="lkReason" data-role="button" data-icon="search" data-iconpos="right"><span  data-lang="lkSelect">Select</span></a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    </table>
+                </div>
+		
+
+            </div>
+
+        </div>
+      <div data-role="footer" data-position="fixed">
+        </div>
+        <script src="controller/abortion_detail.js" type="text/javascript"></script>
+    </div>
+</body>
+</html>

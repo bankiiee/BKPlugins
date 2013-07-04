@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Sale/Transfer Out</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <link href="resource/css/themes/default/jquery.mobile-1.2.0.css" rel="stylesheet" type="text/css" />
+    <link href="resource/css/themes/ios_inspired/styles.css" rel="stylesheet" type="text/css" />
+	<link href="resource/css/jqm-datebox.min.css" rel="stylesheet" type="text/css" />
+    <link href="vendor/css/jquery.swipeButton-1.2.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="vendor/css/jquery-mobile-red-buttons.css" />
+	<link href="resource/css/custom.css" rel="stylesheet" type="text/css" />
+  
+    <script src="vendor/xdate.js" type="text/javascript"></script>
+    <script src="vendor/xdate.i18n.js" type="text/javascript"></script>
+    <script src="vendor/jquery-1.8.2.min.js" type="text/javascript"></script>
+    <script src="vendor/jquery-ui-1.9.1.custom.min.js" type="text/javascript"></script>
+    <script src="vendor/jquery.mobile-1.2.0.js" type="text/javascript"></script>
+	<script src="vendor/jqm-datebox.core.min.js" type="text/javascript"></script>
+    <script src="vendor/jqm-datebox.mode.calbox.min.js" type="text/javascript"></script>
+    <script src="vendor/jquery.swipeButton-1.2.1.min.js" type="text/javascript"></script>
+    <script src="vendor/underscore.js" type="text/javascript"></script>
+    <script type="text/javascript" src="resource/js/accounting.js"></script>
+    <script src="vendor/cordova-2.5.0.js" type="text/javascript"></script>
+    <script src="vendor/highcharts.js" type="text/javascript"></script>
+    <script src="vendor/barcodescanner.js" type="text/javascript"></script>
+    <script src="resource/js/DbConnector.js" type="text/javascript"></script>
+    <script src="resource/js/BO.js" type="text/javascript"></script>
+    <script src="resource/js/Global.js" type="text/javascript"></script>
+    <script src="controller/farm_context.js" type="text/javascript"></script>
+    <script src="controller/stock_context.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $.Ctx.InitIndiviualPage();
+    </script>
+</head>
+<body>
+   
+    <div data-role="page" id="sale_transfer_detail">
+        <script src="controller/sale_transfer_detail.js" type="text/javascript"></script>
+        <!--header page -->
+        <header data-role="header" data-position="fixed">
+            <a data-back="true" data-theme="a"><span id="btnBack" data-lang="btnBack">Back</span></a>
+        <h1><span id="captionHeader" data-lang='headerSaleTransferInfo'>Sale/Transfer Detail</span></h1>
+            <a   data-role="button"  data-icon="check" id='btnSave' ><span id="btnSave" data-lang="btnSave">save</span></a>
+        </header>
+        <div data-role="content" id="j_3" name="mobilecontainer1" class="mobilecontainer1"
+            dsid="mobilecontainer1">
+
+            <div class="mobilegrid1_wrapper">
+                <table id="j_1" class="mobilegrid1" dsid="mobilegrid3" name="mobilegrid1" cellpadding="0" cellspacing="0">
+                    <col style="width: 100px;">
+                    <col style="width: 30px;">
+                    <col style="width: 75%;">
+                    <tr>
+                        <td id="j_2" name="mobilegridcell1" class="mobilegridcell1" colspan="1" rowspan="1">
+                            <div class="cell-wrapper">
+                                <div name="divCustomerId" style="font-weight: bold;" id="j_3" dsid="divCustomerId" data-role="tiggr_label" placeholder="Customer" class='mobilelabel1'>
+                                    <span id="lblCustomerId" data-lang="lblCustomerId">Customer</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td id="j_4" name="mobilegridcell2" class="mobilegridcell2" colspan="1" rowspan="1">
+                            <div class="cell-wrapper">
+                                <div data-role="fieldcontain" class="mobiletextinput1">
+
+                                </div>
+                            </div>
+                        </td>
+                        <td id="j_5" name="mobilegridcell3" class="mobilegridcell3" colspan="1" rowspan="1">
+                            <div class="cell-wrapper">
+                                <div class="mobilebutton1_wrapper ">
+                                    <a  id="lkCustomerId" data-role="button" data-icon="search" data-iconpos="right"><span  data-lang="lkSelect">Select</span></a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="mobilegrid1_wrapper">
+                <table id="j_6" class="mobilegrid1" dsid="mobilegrid3" name="mobilegrid1" cellpadding="0" cellspacing="0">
+                    <col style="width: 100px;">
+                    <col style="width: 30px;">
+                    <col style="width: 75%;">
+                    <tr>
+                        <td id="j_7" name="mobilegridcell4" class="mobilegridcell1" colspan="1" rowspan="1">
+                            <div class="cell-wrapper">
+                                <div name="divRefDoc" style="font-weight: bold;" id="j_8" dsid="divRefDoc" data-role="tiggr_label" placeholder="Reference Document" class='mobilelabel1'>
+                                    <span id="lblRefDoc" data-lang="lblRefDoc">Ref. Doc-No.</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td id="j_9" name="mobilegridcell5" class="mobilegridcell2" colspan="1" rowspan="1">
+                            <div class="cell-wrapper">
+                                <div data-role="fieldcontain" class="mobiletextinput1">
+
+                                </div>
+                            </div>
+                        </td>
+                        <td id="j_10" name="mobilegridcell6" class="mobilegridcell3" colspan="1" rowspan="1">
+                            <div class="cell-wrapper">
+                                <div class="mobilebutton1_wrapper ">
+                                    <input type="text" name="txtRefDoc" id="txtRefDoc" data-lang="txtRefDoc" value="" placeholder="Ref. Document"  />
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                    </tr>
+                </table>
+            </div>
+           
+            <div class="mobilegrid1_wrapper">
+                <table id="j_11" class="mobilegrid1" dsid="mobilegrid3" name="mobilegrid3" cellpadding="0"
+                    cellspacing="0">
+                    <col style="width: 100px;">
+                    <col style="width: 30px;">
+                    <col style="width: 75%;">
+                    <tr>
+                        <td id="j_12" name="mobilegridcell7" class="mobilegridcell1" colspan="1" rowspan="1">
+                            <div class="cell-wrapper">
+                                <div name="LableSwineID" style="font-weight: bold;" id="j_13" dsid="LableSwineID" data-role="tiggr_label" placeholder="Swine ID" class=' mobilelabel1 '>
+                                    <span id="lblSwineId" data-lang="lblSwineId">Swine ID</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td id="j_14" name="mobilegridcell8" class="mobilegridcell2" colspan="1" rowspan="1">
+                            <div class="cell-wrapper">
+                                <div data-role="fieldcontain" class="mobiletextinput1">                                   
+                                        
+                                </div>
+                            </div>
+                        </td>
+                        <td id="j_15" name="mobilegridcell9" class="mobilegridcell3" colspan="1" rowspan="1">
+                            <div class="cell-wrapper">
+                                <div class="mobilebutton1_wrapper ">                                   
+                                     <a  id="lkSwineId" data-role="button" data-icon="search" data-iconpos="right"><span data-lang="lkSelect">Select</span></a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="mobilegrid1_wrapper">
+                <table id="j_16" class="mobilegrid2" dsid="mobilegrid4" name="mobilegrid4" cellpadding="0"
+                    cellspacing="0">
+                    <col style="width: 100px;">
+                    <col style="width: 30px;">
+                    <col style="width: 75%;">
+                    <tr>
+                        <td id="j_17" name="mobilegridcell10" class="mobilegridcell1" colspan="1" rowspan="1">
+                            <div class="cell-wrapper">
+                                <div name="divProductId" style="font-weight: bold;" idid="j_18" dsid="divProductId"
+                                    data-role="tiggr_label" placeholder="ReasonID" class=' mobilelabel2 '>
+                                    <span id="lblProductId" data-lang="lblProductId">Product</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td id="j_19" name="mobilegridcell11" class="mobilegridcell2" colspan="1" rowspan="1">
+                            <div class="cell-wrapper">
+                                <div data-role="fieldcontain" class="mobiletextinput1">
+                                    <!--<input type="text" name="mobiletextinput3" dsid="mobiletextinput3" id="j_15boar"
+                                        placeholder="BoarID" placeholder="" tabindex="3" data-theme='b' class=' mobiletextinput2 ' />-->
+                                </div>
+                            </div>
+                        </td>
+                        <td id="j_20" name="mobilegridcell12" class="mobilegridcell3" colspan="1" rowspan="1">
+                            <div class="cell-wrapper">
+                                <div class="mobilebutton2_wrapper "> 
+                                         <a id="lkProductId" data-role="button" data-icon="search" data-iconpos="right"><span data-lang="lkSelect">Select</span></a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="mobilegrid2_wrapper">
+                <table id="j_11" class="mobilegrid2" dsid="mobilegrid4" name="mobilegrid4" cellpadding="0"
+                       cellspacing="0">
+                    <col style="width: 100px;">
+                    <col style="width: 30px;">
+                    <col style="width: 75%;">
+                    <tr>
+                        <td id="j_12" name="mobilegridcell16" class="mobilegridcell4" colspan="1" rowspan="1">
+                            <div class="cell-wrapper">
+                                <div name="LableReasonID" style="font-weight: bold;" idid="j_13" dsid="LableReasonID"
+                                     data-role="tiggr_label" placeholder="ReasonID" class='mobilelabel2'>
+                                    <span id="lblReasonId" data-lang="lblReasonId">Reason Code</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td id="j_14" name="mobilegridcell17" class="mobilegridcell5" colspan="1" rowspan="1">
+                            <div class="cell-wrapper">
+                                <div data-role="fieldcontain" class="mobiletextinput2">
+                                    <!--<input type="text" name="mobiletextinput3" dsid="mobiletextinput3" id="j_15boar"
+                             placeholder="BoarID" placeholder="" tabindex="3" data-theme='b' class=' mobiletextinput2 ' />-->
+                                </div>
+                            </div>
+                        </td>
+                        <td id="j_16" name="mobilegridcell18" class="mobilegridcell6" colspan="1" rowspan="1">
+                            <div class="cell-wrapper">
+                                <div class="mobilebutton2_wrapper ">
+                                    <a id="lkReasonId" data-role="button" data-icon="search" data-iconpos="right"><span data-lang="lkSelect">Select</span></a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+
+
+            <div class="mobilegrid1_wrapper">
+                <table id="j_21" class="mobilegrid1" dsid="mobilegrid3" name="mobilegrid1" cellpadding="0" cellspacing="0">
+                    <col style="width: 100px;">
+                    <col style="width: 30px;">
+                    <col style="width: 75%;">
+                    <tr>
+                        <td id="j_22" name="mobilegridcell4" class="mobilegridcell1" colspan="1" rowspan="1">
+                            <div class="cell-wrapper">
+                                <div name="divWeight" style="font-weight: bold;" id="j_23" dsid="divWeight" data-role="tiggr_label" placeholder="Weight" class='mobilelabel1'>
+                                    <span id="lblWeight" data-lang="lblWeight">Weight</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td id="j_24" name="mobilegridcell5" class="mobilegridcell2" colspan="1" rowspan="1">
+                            <div class="cell-wrapper">
+                                <div data-role="fieldcontain" class="mobiletextinput1">
+
+                                </div>
+                            </div>
+                        </td>
+                        <td id="j_25" name="mobilegridcell6" class="mobilegridcell3" colspan="1" rowspan="1">
+                            <div class="cell-wrapper">
+                                <div class="mobilebutton1_wrapper ">
+                                    <input type="number" name="txtWeight" id="txtWeight" data-lang="txtWeight" value="" placeholder="Weight"  />
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="mobilegrid1_wrapper">
+                <table id="j_26" class="mobilegrid1" dsid="mobilegrid3" name="mobilegrid1" cellpadding="0" cellspacing="0">
+                    <col style="width: 100px;">
+                    <col style="width: 30px;">
+                    <col style="width: 75%;">
+                    <tr>
+                        <td id="j_27" name="mobilegridcell4" class="mobilegridcell1" colspan="1" rowspan="1">
+                            <div class="cell-wrapper">
+                                <div name="divAmount" style="font-weight: bold;" id="j_28" dsid="divAmount" data-role="tiggr_label" placeholder="Weight" class='mobilelabel1'>
+                                    <span id="lblAmount" data-lang="lblAmount">Amount</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td id="j_29" name="mobilegridcell5" class="mobilegridcell2" colspan="1" rowspan="1">
+                            <div class="cell-wrapper">
+                                <div data-role="fieldcontain" class="mobiletextinput1">
+
+                                </div>
+                            </div>
+                        </td>
+                        <td id="j_30" name="mobilegridcell6" class="mobilegridcell3" colspan="1" rowspan="1">
+                            <div class="cell-wrapper">
+                                <div class="mobilebutton1_wrapper ">
+                                    <input type="number" name="txtAmount" id="txtAmount" data-lang="txtAmount" value="" placeholder="Amount"  />
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+
+
+
+        <div data-role="footer" data-position="fixed">
+        </div>
+    </div>
+</body>
+</html>

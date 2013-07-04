@@ -1,0 +1,64 @@
+<html>
+<head>
+    <title>Confirm Key In -List</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="resource/css/themes/default/jquery.mobile-1.2.0.css" rel="stylesheet" type="text/css" />
+    <link href="resource/css/themes/ios_inspired/styles.css" rel="stylesheet" type="text/css" />
+	<link href="resource/css/jqm-datebox.min.css" rel="stylesheet" type="text/css" />
+    <link href="vendor/css/jquery.swipeButton-1.2.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="vendor/css/jquery-mobile-red-buttons.css" />
+	<link href="resource/css/custom.css" rel="stylesheet" type="text/css" />
+  
+    <script src="vendor/xdate.js" type="text/javascript"></script>
+    <script src="vendor/xdate.i18n.js" type="text/javascript"></script>
+    <script src="vendor/jquery-1.8.2.min.js" type="text/javascript"></script>
+    <script src="vendor/jquery-ui-1.9.1.custom.min.js" type="text/javascript"></script>
+    <script src="vendor/jquery.mobile-1.2.0.js" type="text/javascript"></script>
+	<script src="vendor/jqm-datebox.core.min.js" type="text/javascript"></script>
+    <script src="vendor/jqm-datebox.mode.calbox.min.js" type="text/javascript"></script>
+	<script src="vendor/jquery.mobile.datebox.i18n.zh-CN.utf8.js" type="text/javascript"></script>
+    <script src="vendor/jquery.swipeButton-1.2.1.min.js" type="text/javascript"></script>
+    <script src="vendor/underscore.js" type="text/javascript"></script>
+    <script type="text/javascript" src="resource/js/accounting.js"></script>
+    <script src="vendor/cordova-2.5.0.js" type="text/javascript"></script>
+    <script src="vendor/highcharts.js" type="text/javascript"></script>
+    <script src="vendor/barcodescanner.js" type="text/javascript"></script>
+    <script src="resource/js/DbConnector.js" type="text/javascript"></script>
+    <script src="resource/js/BO.js" type="text/javascript"></script>
+    <script src="resource/js/Global.js" type="text/javascript"></script>
+    <script src="controller/farm_context.js" type="text/javascript"></script>
+    <script src="controller/stock_context.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $.Ctx.InitIndiviualPage();
+    </script>
+</head>
+<body>
+    <div id="comfirm_key_in_list" data-role="page">
+        <div data-role="header" data-position="fixed"><!--header -->
+            <a href="#" data-role="button" data-back="true" id="btnBack">
+				<span id="btnBackText" data-lang="btnBackText">Back</span>
+			</a><!--backbtn-->
+            <h1><span id="captionHeader">Confirm Data</span></h1>
+			<a href="" id="btnNew" data-role="button" data-icon="plus">
+				<span id="btnNewText" data-lang="btnNewText">New</span>
+			</a>
+        </div>
+
+        <div id="comfirm_key_in_list-content" data-role="content" style="margin-top: -20px;">
+			<div id="collaps-content" style="margin-top: 40px;">
+
+            </div>
+
+		   
+        </div>
+		<div data-role="footer" data-position="fixed">
+        </div>
+		
+		
+        
+		
+        <script src="controller/comfirm_key_in_list.js" type="text/javascript"></script>
+    </div><!-- End Page div id="purchase_mat_list" -->
+</body>
+</html>

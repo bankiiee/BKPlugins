@@ -1,0 +1,263 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Feed Usage Detail</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <link href="resource/css/themes/default/jquery.mobile-1.2.0.css" rel="stylesheet" type="text/css" />
+    <link href="resource/css/themes/ios_inspired/styles.css" rel="stylesheet" type="text/css" />
+    <link href="resource/css/jqm-datebox.min.css" rel="stylesheet" type="text/css" />
+    <link href="vendor/css/jquery.swipeButton-1.2.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="vendor/css/jquery-mobile-red-buttons.css" />
+    <link href="resource/css/custom.css" rel="stylesheet" type="text/css" />
+
+    <script src="vendor/xdate.js" type="text/javascript"></script>
+    <script src="vendor/xdate.i18n.js" type="text/javascript"></script>
+    <script src="vendor/jquery-1.8.2.min.js" type="text/javascript"></script>
+    <script src="vendor/jquery-ui-1.9.1.custom.min.js" type="text/javascript"></script>
+    <script src="vendor/jquery.mobile-1.2.0.js" type="text/javascript"></script>
+    <script src="vendor/jqm-datebox.core.min.js" type="text/javascript"></script>
+    <script src="vendor/jqm-datebox.mode.calbox.min.js" type="text/javascript"></script>
+    <script src="vendor/jquery.swipeButton-1.2.1.min.js" type="text/javascript"></script>
+    <script src="vendor/underscore.js" type="text/javascript"></script>
+    <script type="text/javascript" src="resource/js/accounting.js"></script>
+    <script src="vendor/cordova-2.5.0.js" type="text/javascript"></script>
+    <script src="vendor/highcharts.js" type="text/javascript"></script>
+    <script src="vendor/barcodescanner.js" type="text/javascript"></script>
+    <script src="resource/js/DbConnector.js" type="text/javascript"></script>
+    <script src="resource/js/BO.js" type="text/javascript"></script>
+    <script src="resource/js/Global.js" type="text/javascript"></script>
+    <script src="controller/farm_context.js" type="text/javascript"></script>
+    <script src="controller/stock_context.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $.Ctx.InitIndiviualPage();
+    </script>
+</head>
+<body>
+
+<div data-role="page" id="feed_usage_detail">
+<!--header page -->
+<header data-role="header" data-position="fixed">
+    <a data-back="true" data-theme="a"><span id="labBack" data-lang="btnBack">Back</span></a>
+    <h1><span id="captionHeader" data-lang='headerFeedUsageInfo'>Feed Usage Info</span></h1>
+    <a   data-role="button"  data-icon="check" id='btnSave'><span id="btnSave" data-lang="btnSave">save</span></a>
+</header>
+<div data-role="content" id="j_3" name="mobilecontainer1" class="mobilecontainer1"
+     dsid="mobilecontainer1">
+
+<div class="mobilegrid1_wrapper">
+    <table id="j_1" class="mobilegrid1" dsid="mobilegrid3" name="mobilegrid1" cellpadding="0" cellspacing="0">
+        <col style="width: 100px;">
+        <col style="width: 30px;">
+        <col style="width: 75%;">
+        <tr>
+            <td id="j_2" name="mobilegridcell1" class="mobilegridcell1" colspan="1" rowspan="1">
+                <div class="cell-wrapper">
+                    <div name="divFarmOrg" style="font-weight: bold;" id="j_3" dsid="divFarmOrg" data-role="tiggr_label"  class='mobilelabel1'>
+                        <span id="lblFarmOrgLoc" data-lang="lblFarmOrgLoc">Farm Org</span>
+                    </div>
+                </div>
+            </td>
+            <td id="j_4" name="mobilegridcell2" class="mobilegridcell2" colspan="1" rowspan="1">
+                <div class="cell-wrapper">
+                    <div data-role="fieldcontain" class="mobiletextinput1">
+
+                    </div>
+                </div>
+            </td>
+            <td id="j_5" name="mobilegridcell3" class="mobilegridcell3" colspan="1" rowspan="1">
+                <div class="cell-wrapper">
+                    <div class="mobilebutton1_wrapper ">
+                        <a  id="lkFarmOrg" data-role="button" data-icon="search" data-iconpos="right"><span data-lang="lkSelect">Select</span></a>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+        </tr>
+    </table>
+</div>
+
+<div class="mobilegrid1_wrapper">
+    <table id="j_6" class="mobilegrid1" dsid="mobilegrid3" name="mobilegrid1" cellpadding="0" cellspacing="0">
+        <col style="width: 130px;">
+        <tr>
+            <td id="j_7" name="mobilegridcell4" class="mobilegridcell1" colspan="1" rowspan="1">
+                <div class="cell-wrapper">
+                    <div name="divPigBal" style="font-weight: bold;" id="j_8" dsid="divPigBal" data-role="tiggr_label" placeholder="Reference Document" class='mobilelabel1'>
+                        <span id="lblPoultryBal" data-lang="lblPoultryBal">Poultry Balance</span>
+                    </div>
+                </div>
+            </td>
+            <td id="j_10" name="mobilegridcell6" class="mobilegridcell3" colspan="1" rowspan="1">
+                <div class="cell-wrapper">
+                    <div class="mobilebutton1_wrapper ">
+                        <input type="text" class="ui-disabled" name="txtPoultryBal" id="txtPoultryBal" value="" />
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+        </tr>
+    </table>
+</div>
+
+<div class="mobilegrid1_wrapper">
+    <table id="j_11" class="mobilegrid1" dsid="mobilegrid3" name="mobilegrid3" cellpadding="0"
+           cellspacing="0">
+        <col style="width: 130px;">
+        <tr>
+            <td id="j_12" name="mobilegridcell7" class="mobilegridcell1" colspan="1" rowspan="1">
+                <div class="cell-wrapper">
+                    <div name="divStdUsage" style="font-weight: bold;" id="j_13" dsid="divStdUsage" data-role="tiggr_label" placeholder="Swine ID" class=' mobilelabel1 '>
+                        <span id="lblStdUsage" data-lang="lblStdUsage">Standard Usage (Wt.)</span>
+                    </div>
+                </div>
+            </td>
+            <td id="j_15" name="mobilegridcell9" class="mobilegridcell3" colspan="1" rowspan="1">
+                <div class="cell-wrapper">
+                    <div class="mobilebutton1_wrapper ">
+                        <input type="text" class="ui-disabled" name="txtStdWt" id="txtStdWt" value=""   />
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+        </tr>
+    </table>
+</div>
+
+
+<div class="mobilegrid1_wrapper">
+    <div data-role="fieldcontain" id="Pro1">
+        <div class="ui-grid-a"  >
+            <div class="ui-block-a" style="width: 10% ;margin-top: 20px;text-align: right;padding-right: 50px;" >
+                <span>1.</span>
+            </div>
+            <div class="ui-block-b" style="width: 72% ;" >
+                <a  id="lkProductId1" data-role="button" data-icon="search" data-iconpos="right">
+                    <span data-lang="lkSelect">Select</span></a>
+            </div>
+            <div class="ui-block-c" style="width: 15%;margin-left: 20px;" >
+                <img onclick="scanCode()"  src="resource/css/images/camera1.png" style="width:50px; height:50px ; " >
+                </img>
+            </div>
+        </div>
+        <div class="ui-grid-a" style="margin-top:8px;">
+            <div class="ui-block-a" >
+                <div class="ui-block-a" style="width: 20% ;text-align: right;margin-top: 10px;padding-right: 10px;" >
+                    <span id="lblFeedQty1" data-lang="lblFeedQty">Qty</span>
+                </div>
+                <div class="ui-block-b" style="width: 70% ;" >
+                    <input type="number"   name="txtProQty1" id="txtProQty1" value="" style="width: 60%;"   />
+                    <span id="lblQtyBal1"   style="margin-top: 10px;margin-left:10px;" ></span>
+                </div>
+            </div>
+            <div class="ui-block-b" >
+                <div class="ui-block-a" style="width: 20% ;text-align: right;margin-top: 10px;padding-right: 10px;" >
+                    <span id="lblFeedWt1"  data-lang="lblFeedWt">Wt.</span>
+                </div>
+                <div class="ui-block-b" style="width: 70% ;" >
+                    <input type="number"  name="txtProWt1" id="txtProWt1" value="" style="width: 60%;"   />
+                    <span id="lblWtBal1" style="margin-top: 10px;margin-left:10px;"  ></span>
+                    <!--<span  id="lblWtBal1"   ></span>-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div data-role="fieldcontain" id="Pro2" >
+        <div class="ui-grid-a"  >
+            <div class="ui-block-a" style="width: 10% ;margin-top: 20px;text-align: right;padding-right: 50px;" >
+                <span>2.</span>
+            </div>
+            <div class="ui-block-b" style="width: 72% ;" >
+                <a  id="lkProductId2" data-role="button" data-icon="search" data-iconpos="right">
+                    <span  data-lang="lkSelect">Select</span></a>
+            </div>
+            <div class="ui-block-c" style="width: 15%;margin-left: 20px;" >
+                <img onclick="scanCode()"  src="resource/css/images/camera1.png" style="width:50px; height:50px ; " >
+                </img>
+            </div>
+        </div>
+
+        <div class="ui-grid-a"  style="margin-top:8px;">
+            <div class="ui-block-a" >
+                <div class="ui-block-a" style="width: 20% ;text-align: right;margin-top: 10px;padding-right: 10px;" >
+                    <span id="lblFeedQty2" data-lang="lblFeedQty">Qty</span>
+                </div>
+                <div class="ui-block-b" style="width: 70% ;" >
+                    <input type="number"   name="txtProQty2" id="txtProQty2" value=""  style="width: 60%;"    />
+                    <span id="lblQtyBal2" style="margin-top: 10px;margin-left:10px;" ></span>
+                </div>
+            </div>
+            <div class="ui-block-b"  >
+                <div class="ui-block-a" style="width: 20% ;text-align: right;margin-top: 10px;padding-right: 10px;" >
+                    <span id="lblFeedWt2"    data-lang="lblFeedWt">Wt.</span>
+                </div>
+                <div class="ui-block-b" style="width: 70% ;" >
+                    <input type="number"  name="txtProWt2" id="txtProWt2" value=""  style="width: 60%;"    />
+                    <span id="lblWtBal2" style="margin-top: 10px;margin-left:10px;" ></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div data-role="fieldcontain" id="Pro3">
+        <div class="ui-grid-a"  >
+            <div class="ui-block-a" style="width: 10% ;margin-top: 20px;text-align: right;padding-right: 50px;" >
+                <span>3.</span>
+            </div>
+            <div class="ui-block-b" style="width: 72% ;" >
+                <a  id="lkProductId3" data-role="button" data-icon="search" data-iconpos="right">
+                    <span data-lang="lkSelect">Select</span></a>
+            </div>
+            <div class="ui-block-c" style="width: 15%;margin-left: 20px;" >
+                <img onclick="scanCode()"  src="resource/css/images/camera1.png" style="width:50px; height:50px ; " >
+                </img>
+            </div>
+        </div>
+
+        <div class="ui-grid-a"  style="margin-top:8px;">
+            <div class="ui-block-a" >
+                <div class="ui-block-a" style="width: 20% ;text-align: right;margin-top: 10px;padding-right: 10px;" >
+                    <span id="lblFeedQty3" data-lang="lblFeedQty">Qty</span>
+                </div>
+                <div class="ui-block-b" style="width: 70% ;" >
+                    <input type="number"   name="txtProQty3" id="txtProQty3" value=""  style="width: 60%;"  />
+                    <span id="lblQtyBal3" style="margin-top: 10px;margin-left:10px;" ></span>
+                </div>
+            </div>
+            <div class="ui-block-b"  >
+                <div class="ui-block-a" style="width: 20% ;text-align: right;margin-top: 10px;padding-right: 10px;" >
+                    <span id="lblFeedWt3"   data-lang="lblFeedWt">Wt.</span>
+                </div>
+                <div class="ui-block-b" style="width: 70% ;" >
+                    <input type="number"  name="txtProWt3" id="txtProWt3" value=""  style="width: 60%;"   />
+                    <span id="lblWtBal3" style="margin-top: 10px;margin-left:10px;" ></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="mobilegrid1_wrapper">
+
+    <div data-role="fieldcontain"  >
+        <div class="ui-grid-a"  >
+            <div class="ui-block-a" style="width: 10% ;margin-top: 10px; font-weight: bold; " >
+                <span id="lblTotal" data-lang="lblTotal">Total</span>
+            </div>
+            <div class="ui-block-b" style="width: 72% ;" >
+                    <input type="text" class="ui-disabled" style=" width: 80px;   "   name="txtTotalQty" id="txtTotalQty" value=""   />
+                    <input type="text" class="ui-disabled" style=" width: 80px;margin-left: 20px;  "  name="txtTotalWt" id="txtTotalWt" value=""   />
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+<div data-role="footer" data-position="fixed"></div>
+<script src="controller/feed_usage_detail.js" type="text/javascript"></script>
+</div>
+</body>
+</html>

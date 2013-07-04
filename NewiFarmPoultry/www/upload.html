@@ -1,0 +1,68 @@
+<html>
+<head>
+    <title>Upload</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link href="resource/css/themes/default/jquery.mobile-1.2.0.css" rel="stylesheet" type="text/css" />
+    <link href="resource/css/themes/ios_inspired/styles.css" rel="stylesheet" type="text/css" />
+	<link href="resource/css/jqm-datebox.min.css" rel="stylesheet" type="text/css" />
+    <link href="vendor/css/jquery.swipeButton-1.2.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="vendor/css/jquery-mobile-red-buttons.css" />
+	<link href="resource/css/custom.css" rel="stylesheet" type="text/css" />
+  
+    <script src="vendor/xdate.js" type="text/javascript"></script>
+    <script src="vendor/xdate.i18n.js" type="text/javascript"></script>
+    <script src="vendor/jquery-1.8.2.min.js" type="text/javascript"></script>
+    <script src="vendor/jquery-ui-1.9.1.custom.min.js" type="text/javascript"></script>
+    <script src="vendor/jquery.mobile-1.2.0.js" type="text/javascript"></script>
+	<script src="vendor/jqm-datebox.core.min.js" type="text/javascript"></script>
+    <script src="vendor/jqm-datebox.mode.calbox.min.js" type="text/javascript"></script>
+    <script src="vendor/jquery.swipeButton-1.2.1.min.js" type="text/javascript"></script>
+    <script src="vendor/underscore.js" type="text/javascript"></script>
+    <script type="text/javascript" src="resource/js/accounting.js"></script>
+    <script src="vendor/cordova-2.5.0.js" type="text/javascript"></script>
+    <script src="vendor/highcharts.js" type="text/javascript"></script>
+    <script src="vendor/barcodescanner.js" type="text/javascript"></script>
+    <script src="resource/js/DbConnector.js" type="text/javascript"></script>
+    <script src="resource/js/BO.js" type="text/javascript"></script>
+    <script src="resource/js/Global.js" type="text/javascript"></script>
+    <script src="controller/farm_context.js" type="text/javascript"></script>
+    <script src="controller/stock_context.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $.Ctx.InitIndiviualPage();
+    </script>
+</head>
+<body>
+    <div id="upload" data-role="page">
+        <div data-role="header">
+            <!-- /header -->
+            <a data-role="button" data-theme="a" data-back="true" id="btnBack"><span id="labBack"
+                data-lang='btnBack'>Back</span></a><!--backbtn-->
+            <h1>
+                <span id="captionHeader" data-lang='headerUpload'>Upload</span></h1>
+        </div>
+        <div data-role="content">
+            <ul id="lst1" data-role="listview" data-inset="true">
+                <li><span id="labDate" data-lang='lblDate'>Current date:</span> <font color='blue'>
+                    <span id="lblBusDate" class="ui-li-aside"></span></font></li>
+                <li><span data-lang="lblWaiting">Items waiting to upload:</span><span
+                    id="lblCount" class='ui-li-count'><font color='red'>0</font></span> </li>
+            </ul>
+            <div id="divBtns">
+            <a data-role="button" id="btnuploadAllTable" data-theme="b">
+                <img src="resource/css/images/sq_br_up_white.png" /><br />
+                <span id="labuploadNow" data-lang='btnuploadNow'>Upload now</span>
+            </a>
+            </div>
+            </br>
+            <div id="lstViewContainer" style="display: none">
+                <ul id="lstView" style="display: none" data-filter="false" data-role="listview" data-inset="true">
+                </ul>
+            </div>
+        </div>
+      <div data-role="footer" data-position="fixed">
+        </div>
+        <script src="controller/upload.js" type="text/javascript"></script>
+    </div>
+</body>
+</html>

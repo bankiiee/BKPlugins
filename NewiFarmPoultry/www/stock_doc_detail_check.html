@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <title>stock_doc_detail_check</title>
+   <link href="resource/css/themes/default/jquery.mobile-1.2.0.css" rel="stylesheet" type="text/css" />
+    <link href="resource/css/themes/ios_inspired/styles.css" rel="stylesheet" type="text/css" />
+	<link href="resource/css/jqm-datebox.min.css" rel="stylesheet" type="text/css" />
+    <link href="vendor/css/jquery.swipeButton-1.2.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="vendor/css/jquery-mobile-red-buttons.css" />
+	<link href="resource/css/custom.css" rel="stylesheet" type="text/css" />
+  
+    <script src="vendor/xdate.js" type="text/javascript"></script>
+    <script src="vendor/xdate.i18n.js" type="text/javascript"></script>
+    <script src="vendor/jquery-1.8.2.min.js" type="text/javascript"></script>
+    <script src="vendor/jquery-ui-1.9.1.custom.min.js" type="text/javascript"></script>
+    <script src="vendor/jquery.mobile-1.2.0.js" type="text/javascript"></script>
+	<script src="vendor/jqm-datebox.core.min.js" type="text/javascript"></script>
+    <script src="vendor/jqm-datebox.mode.calbox.min.js" type="text/javascript"></script>
+    <script src="vendor/jquery.swipeButton-1.2.1.min.js" type="text/javascript"></script>
+    <script src="vendor/underscore.js" type="text/javascript"></script>
+    <script type="text/javascript" src="resource/js/accounting.js"></script>
+    <script src="vendor/cordova-2.5.0.js" type="text/javascript"></script>
+    <script src="vendor/highcharts.js" type="text/javascript"></script>
+    <script src="vendor/barcodescanner.js" type="text/javascript"></script>
+    <script src="resource/js/DbConnector.js" type="text/javascript"></script>
+    <script src="resource/js/BO.js" type="text/javascript"></script>
+    <script src="resource/js/Global.js" type="text/javascript"></script>
+    <script src="controller/farm_context.js" type="text/javascript"></script>
+    <script src="controller/stock_context.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $.Ctx.InitIndiviualPage();
+        $.StockCtx.RetrieveLocalStorage();
+    </script>
+</head>
+<body>
+    <!-- Login -->
+    <div data-role="page" id="stock_doc_detail_check" >
+        <div data-role="header" data-position="fixed" data-mini="false">
+            <a data-back="true" data-theme="a"><span id="labBack" data-lang="btnBack">Back</span></a>
+            <h1 data-lang="titleStockCheckAvailable">
+                <span id="headerAvailableStock" data-lang="headerAvailableStock">Available Stock</span></h1>
+        </div>
+        <!-- /header -->
+        <div data-role="content" data-theme="c" id="stock-detail-criteria">
+            <div class="ui-grid-a" id="product-grid">
+                <div class="ui-block-a">
+                    <span data-lang="lblProduct" class="caption">Product</span>
+                </div>
+                <div class="ui-block-b">
+                    <button id="product-btn" data-role="button" data-icon="search" data-iconpos="right"
+                        data-theme="b">
+                        <span data-lang="btnChooseitem" >Choose item</span></button>
+                </div>
+            </div>
+            <div class="ui-grid-a" id="lot-grid">
+                <div class="ui-block-a">
+                    <span data-lang="lblLot"  class="caption">Lot</span>
+                </div>
+                <div class="ui-block-b">
+                    <button id="lot-btn" data-role="button" data-icon="search" data-iconpos="right" data-theme="b">
+                        <span data-lang="btnChooseitem" >Choose item</span></button></button>
+                </div>
+            </div>
+            <div class="ui-grid-a" id="sublot-grid">
+                <div class="ui-block-a">
+                    <span data-lang="lblSublot"  class="caption">Sub Lot</span>
+                </div>
+                <div class="ui-block-b">
+                    <button id="sublot-btn" data-role="button" data-icon="search" data-iconpos="right"
+                        data-theme="b">
+                        <span data-lang="btnChooseitem" >Choose item</span></button></button>
+                </div>
+            </div>
+            <div class="ui-grid-a" id="productiondate-grid">
+                <div class="ui-block-a">
+                    <span data-lang="lblProductiondate"  class="caption">Production Date</span>
+                </div>
+                <div class="ui-block-b">
+                    <div class="ui-grid-a">
+                        <div class="ui-block-a" style="width: 70%">
+                            <input type="text" id="production-date" value="" />
+                        </div>
+                        <div class="ui-block-b" style="width: 30%">
+                            <button id="clear-productiondate-btn" data-role="button" data-icon="delete" data-iconpos="notext"
+                                data-theme="b">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ui-grid-a" id="expiredate-grid">
+                <div class="ui-block-a">
+                    <span data-lang="lblExpiredate"  class="caption">Expire Date</span>
+                </div>
+                <div class="ui-block-b">
+                    <div class="ui-grid-a">
+                        <div class="ui-block-a" style="width: 70%">
+                            <input type="text" id="expire-date" value="" />
+                        </div>
+                        <div class="ui-block-b" style="width: 30%">
+                            <button id="clear-expiredate-btn" data-role="button" data-icon="delete" data-iconpos="notext"
+                                data-theme="b">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ui-grid-a" id="receiveddate-grid">
+                <div class="ui-block-a">
+                    <span data-lang="lblReceiveddate"  class="caption">Received Date</span>
+                </div>
+                <div class="ui-block-b">
+                    <div class="ui-grid-a">
+                        <div class="ui-block-a" style="width: 70%">
+                            <input type="text" id="received-date" value="" />
+                        </div>
+                        <div class="ui-block-b" style="width: 30%">
+                            <button id="clear-receiveddate-btn" data-role="button" data-icon="delete" data-iconpos="notext"
+                                data-theme="b">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--<div class="ui-grid-a" id="labor-grid">
+                <div class="ui-block-a">
+                    <span data-lang="labor-lab">Labor</span>
+                </div>
+                <div class="ui-block-b">
+                    <button id="labor-btn" data-role="button" data-icon="search" data-iconpos="right"
+                        data-theme="b">
+                        Choose item</button>
+                </div>
+            </div>-->
+            <a id="checkstock-btn" data-role="button" data-theme="b"><span data-lang="lblCheckAvailableStock"  class="caption">Check Available Stock</span></a>
+            <ul id="available-stock-list" data-role="listview" data-theme="c" data-divider-theme="b"
+                data-inset="true">
+            </ul>
+        </div>
+
+        <script src="controller/stock_doc_detail_check.js" type="text/javascript"></script>
+    </div>
+    
+</body>
+</html>

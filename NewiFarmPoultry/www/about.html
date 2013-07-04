@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <title>About</title>
+    <link href="resource/css/themes/default/jquery.mobile-1.2.0.css" rel="stylesheet" type="text/css" />
+    <link href="resource/css/themes/ios_inspired/styles.css" rel="stylesheet" type="text/css" />
+	<link href="resource/css/jqm-datebox.min.css" rel="stylesheet" type="text/css" />
+    <link href="vendor/css/jquery.swipeButton-1.2.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="vendor/css/jquery-mobile-red-buttons.css" />
+	<link href="resource/css/custom.css" rel="stylesheet" type="text/css" />
+  
+    <script src="vendor/xdate.js" type="text/javascript"></script>
+    <script src="vendor/xdate.i18n.js" type="text/javascript"></script>
+    <script src="vendor/jquery-1.8.2.min.js" type="text/javascript"></script>
+    <script src="vendor/jquery-ui-1.9.1.custom.min.js" type="text/javascript"></script>
+    <script src="vendor/jquery.mobile-1.2.0.js" type="text/javascript"></script>
+	<script src="vendor/jqm-datebox.core.min.js" type="text/javascript"></script>
+    <script src="vendor/jqm-datebox.mode.calbox.min.js" type="text/javascript"></script>
+    <script src="vendor/jquery.swipeButton-1.2.1.min.js" type="text/javascript"></script>
+    <script src="vendor/underscore.js" type="text/javascript"></script>
+    <script type="text/javascript" src="resource/js/accounting.js"></script>
+    <script src="vendor/cordova-2.5.0.js" type="text/javascript"></script>
+    <script src="vendor/highcharts.js" type="text/javascript"></script>
+    <script src="vendor/barcodescanner.js" type="text/javascript"></script>
+    <script src="resource/js/DbConnector.js" type="text/javascript"></script>
+    <script src="resource/js/BO.js" type="text/javascript"></script>
+    <script src="resource/js/Global.js" type="text/javascript"></script>
+    <script src="controller/farm_context.js" type="text/javascript"></script>
+    <script src="controller/stock_context.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $.Ctx.InitIndiviualPage();
+    </script>
+</head>
+<body>
+    <div data-role="page" id="about">
+        <div data-role="header" data-position="fixed">
+            <a data-back="true" data-theme="a"><span id="labBack" data-lang='btnBack'>Back</span></a>
+            <h1>
+                <span id="captionHeader" data-lang='headerAbout'>About</span></h1>
+        </div>
+        <!-- /header -->
+        <div data-role="content">
+            <div class="config-date">
+           
+                <ul data-role="listview" data-inset="true"  >
+                    <li data-role="fieldcontain">
+                        <fieldset data-role="controlgroup">
+                          
+                            <!--<h2><span id="lblBusinessDate" data-lang="lblBusinessDate" style="font-weight: bold; text-align: right" >IFarm</span></h2>-->
+                            <span id="lblVersion" data-lang="lblVersion" style="font-weight: bold; text-align: right">Current Version 1.0.0.0</span>
+                        </fieldset>
+                        
+                    </li>
+                    <li data-role="fieldcontain" id="liBreederCode">
+                        <fieldset data-role="controlgroup">
+                            <span id="lblCoppyRight" data-lang="lblCoppyRight" style="font-weight: bold; text-align: right">&copy; 2012 CPF IT Center Co,Ltd.</span>
+                        </fieldset>
+                    </li>
+                </ul>
+                
+            </div>
+        </div>
+        <script type="text/javascript" src="controller/about.js"></script>
+    </div>
+</body>
+</html>

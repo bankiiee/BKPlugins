@@ -1,0 +1,151 @@
+<html>
+<head>
+    <title>Move to Other House</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="resource/css/themes/default/jquery.mobile-1.2.0.css" rel="stylesheet" type="text/css" />
+    <link href="resource/css/themes/ios_inspired/styles.css" rel="stylesheet" type="text/css" />
+	<link href="resource/css/jqm-datebox.min.css" rel="stylesheet" type="text/css" />
+    <link href="vendor/css/jquery.swipeButton-1.2.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="vendor/css/jquery-mobile-red-buttons.css" />
+	<link href="resource/css/custom.css" rel="stylesheet" type="text/css" />
+  
+    <script src="vendor/xdate.js" type="text/javascript"></script>
+    <script src="vendor/xdate.i18n.js" type="text/javascript"></script>
+    <script src="vendor/jquery-1.8.2.min.js" type="text/javascript"></script>
+    <script src="vendor/jquery-ui-1.9.1.custom.min.js" type="text/javascript"></script>
+    <script src="vendor/jquery.mobile-1.2.0.js" type="text/javascript"></script>
+	<script src="vendor/jqm-datebox.core.min.js" type="text/javascript"></script>
+    <script src="vendor/jqm-datebox.mode.calbox.min.js" type="text/javascript"></script>
+    <script src="vendor/jquery.swipeButton-1.2.1.min.js" type="text/javascript"></script>
+    <script src="vendor/underscore.js" type="text/javascript"></script>
+    <script type="text/javascript" src="resource/js/accounting.js"></script>
+    <script src="vendor/cordova-2.5.0.js" type="text/javascript"></script>
+    <script src="vendor/highcharts.js" type="text/javascript"></script>
+    <script src="vendor/barcodescanner.js" type="text/javascript"></script>
+    <script src="resource/js/DbConnector.js" type="text/javascript"></script>
+    <script src="resource/js/BO.js" type="text/javascript"></script>
+    <script src="resource/js/Global.js" type="text/javascript"></script>
+    <script src="controller/farm_context.js" type="text/javascript"></script>
+    <script src="controller/stock_context.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $.Ctx.InitIndiviualPage();        
+    </script>
+</head>
+<body>
+    <div id="grower_move_trans_poultry" data-role="page">
+        <div data-role="header" data-position="fixed"><!-- /header -->
+            <a href="#" data-role="button" data-theme="a" data-back="true" id="btnBack">
+			<span id="btnBack" data-lang="btnBack">Back</span></a><!--backbtn-->
+            <h1><span id="captionHeader">Move to Other House</span></h1>
+			<a href="" id="btnSave" data-role="button" data-icon="check"><span id="btnSave" data-lang="btnSave">Save</span></a>
+        </div>
+        <div id="grower_move_trans_poultry-content" data-role="content">
+			<div id="lblMode" style="margin-top:-7"></div>
+			<!--div id="lblStock">Stock:</div-->
+           <ul data-role="listview" data-inset="true" id="input-Dead" style="margin-top:0">
+				<li data-role="fieldcontain">
+                    <fieldset data-role="controlgroup">
+						<legend><span id="lblFromLocation" data-lang="lblFromLocation">From Location.</span></legend>
+                        <button id="lpFarmOrgFrom" data-role="button" data-icon="search" data-iconpos="right"></button>     
+                    </fieldset>
+                </li>
+				<li data-role="fieldcontain">
+				<!-- <fieldset data-role="controlgroup">
+						<legend><span  data-lang="lblFarmMng">Farm Mng.</span></legend>
+                        <button id="lpFarmMng" data-role="button" data-icon="search" data-iconpos="right">Select </button>     
+                    </fieldset>-->
+                    <fieldset data-role="controlgroup" style="margin-top:8px">
+						<legend><span id="lblToLocation" data-lang="lblToLocation">To Location.</span></legend>
+                        <button id="lpFarmOrgTo" data-role="button" data-icon="search" data-iconpos="right"></button>     
+                    </fieldset>
+                </li>
+				<!--<li data-role="fieldcontain" id="liBreederCode">
+                    <fieldset data-role="controlgroup">
+						<legend><span id="lblBreederCode" data-lang="lblBreederCode">Breeder Code:</span></legend>
+                        <button id="lpBreederCode" data-role="button" data-icon="search" data-iconpos="right"></button>     
+                    </fieldset>
+                </li>-->
+				<li data-role="fieldcontain" id="liBirthWeek">
+                    <!--fieldset data-role="controlgroup">
+						<legend><span id="lblBirthWeek" data-lang='lblBirthWeek'>Birth Week:</span></legend>
+                        <button id="lpBirthWeek" data-role="button" data-icon="search" data-iconpos="right"><span id="btnBirthWeek" data-lang='btnBirthWeek'>Birth Week</span></button>     
+                    </fieldset-->
+					<div class="ui-grid-b">
+						<div class="ui-block-a">
+							<div style="float:left;font-size:small">
+								<span  data-lang="lblBD">Birth Week:&nbsp;</span>
+							</div>
+							<div id="lblBirthWeek" style="float:left"></div>
+						</div>
+						<div class="ui-block-b">
+							<div style="float:left;font-size:small">
+								<span id="lblAvMaleShow" data-lang="lblAvMaleShow">Avaliable Male:&nbsp; </span>
+							</div>
+							<div id="lblAvMale" style="float:left"></div>
+						</div>
+						<div class="ui-block-c">
+							<div style="float:left;font-size:small">
+								<span id="lblAvFMaleShow" data-lang="lblAvFMaleShow">Avaliable Female:&nbsp; </span>
+							</div>
+							<div id="lblAvFMale" style="float:left"></div>
+						</div>
+					</div>
+                </li>
+				<!--li data-role="fieldcontain" id="liBirthWeek">
+                    <fieldset data-role="controlgroup">
+						<legend><span id="lblBirthWeek" data-lang="lblBirthWeek">Birth Week:</span></legend>
+                        <button id="lpBirthWeek" data-role="button" data-icon="search" data-iconpos="right"></button>     
+                    </fieldset>
+                </li-->
+				<li data-role="fieldcontain" id="liProductionDate">
+                    <fieldset data-role="controlgroup">
+						<legend><span id="lblProductiondate" data-lang="lblProductiondate">Production date:</span></legend>
+                       <input type="text" id="txtProductionDateMove" style="width:100%" data-role="datebox" data-options='{"mode": "calbox", "calUsePickers": true, "calNoHeader": true}' />
+                    </fieldset>
+                </li>
+				<li>
+					<strong><span   data-lang="lblQuantity">Quantity</span></strong>
+					<div class="ui-grid-a" style="margin-top:-10px;margin-bottom:-10px">
+						<div class="ui-block-a">
+							<div data-role="fieldcontain">
+								<fieldset data-role="controlgroup">
+									<legend><span   data-lang="lblMQuantity">Male Quantity:</span></legend>
+									<input type="number" id="male-qty" name="male-qty"  min="0" />
+								</fieldset>
+							</div>
+						</div>
+						<div class="ui-block-b">
+							<div data-role="fieldcontain">
+								<fieldset data-role="controlgroup">
+									<legend><span   data-lang="lblFQuantity">Female Quantity:</span></legend>
+									<input type="number" id="female-qty" min="0"/>
+								</fieldset>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="ui-grid-a" style="margin-top:-10px;margin-bottom:-10px">
+						<div class="ui-block-a">
+							<div data-role="fieldcontain">
+								<fieldset data-role="controlgroup">
+									<legend><span  data-lang='lblTotalWeight'>Total Weight:</span></legend>
+									<input type="number" id="total-wt" />
+								</fieldset>
+							</div>
+						</div>
+						<div class="ui-block-b">
+							&nbsp;
+						</div>
+					</div>
+				</li>
+		   </ul>
+		   
+        </div>
+		 <div data-role="footer" data-position="fixed">
+        </div>
+		<script src="controller/grower_move_trans_poultry.js" type="text/javascript"></script>
+    </div><!-- End Page div id="grower_move_trans_poultry" -->
+</body>
+</html>

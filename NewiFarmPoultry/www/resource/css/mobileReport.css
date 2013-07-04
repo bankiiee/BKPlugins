@@ -1,0 +1,52 @@
+﻿
+        .reportTableStyle
+        {
+            width: 100%;
+            background-color: InfoBackground;
+            border-collapse: collapse;
+            font-size:12px !important;
+        }
+        .reportTableStyle td, .reportTableStyle tr
+        {
+            border-color: Black;
+            border: 1px solid gray;
+            border-spacing: 0px;
+        }
+        .reportTableStyle .headerStyle
+        {
+            text-align: center;
+            font-weight:bold;
+        }
+        .reportTableStyle .cellCenter
+        {
+            text-align: center;
+        }
+        .reportTableStyle .cellRight
+        {
+            text-align: right;
+            padding-right: 5px;
+        }
+    .reportTableStyle .boldFont
+    {
+         font-weight:bold;
+    }
+    
+    .width15
+    {
+        width:15%;
+    }
+    
+    .width25
+    {
+        width:25%;
+    }
+    
+    .width35
+    {
+        width:35%;
+    }
+    
+      .width45
+    {
+        width:45%;
+    }

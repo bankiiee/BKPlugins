@@ -1,0 +1,79 @@
+<html>
+<head>
+    <title>Purchase-List</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="resource/css/themes/default/jquery.mobile-1.2.0.css" rel="stylesheet" type="text/css" />
+    <link href="resource/css/themes/ios_inspired/styles.css" rel="stylesheet" type="text/css" />
+	<link href="resource/css/jqm-datebox.min.css" rel="stylesheet" type="text/css" />
+    <link href="vendor/css/jquery.swipeButton-1.2.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="vendor/css/jquery-mobile-red-buttons.css" />
+	<link href="resource/css/custom.css" rel="stylesheet" type="text/css" />
+  
+    <script src="vendor/xdate.js" type="text/javascript"></script>
+    <script src="vendor/xdate.i18n.js" type="text/javascript"></script>
+    <script src="vendor/jquery-1.8.2.min.js" type="text/javascript"></script>
+    <script src="vendor/jquery-ui-1.9.1.custom.min.js" type="text/javascript"></script>
+    <script src="vendor/jquery.mobile-1.2.0.js" type="text/javascript"></script>
+	<script src="vendor/jqm-datebox.core.min.js" type="text/javascript"></script>
+    <script src="vendor/jqm-datebox.mode.calbox.min.js" type="text/javascript"></script>
+    <script src="vendor/jquery.swipeButton-1.2.1.min.js" type="text/javascript"></script>
+    <script src="vendor/underscore.js" type="text/javascript"></script>
+    <script type="text/javascript" src="resource/js/accounting.js"></script>
+    <script src="vendor/cordova-2.5.0.js" type="text/javascript"></script>
+    <script src="vendor/highcharts.js" type="text/javascript"></script>
+    <script src="vendor/barcodescanner.js" type="text/javascript"></script>
+    <script src="resource/js/DbConnector.js" type="text/javascript"></script>
+    <script src="resource/js/BO.js" type="text/javascript"></script>
+    <script src="resource/js/Global.js" type="text/javascript"></script>
+    <script src="controller/farm_context.js" type="text/javascript"></script>
+    <script src="controller/stock_context.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $.Ctx.InitIndiviualPage();
+    </script>
+</head>
+<body>
+    <div id="purchase_list" data-role="page">
+        <div data-role="header" data-position="fixed"><!-- /header -->
+            <a href="#" data-role="button" data-back="true" id="btnBack">
+				<span id="btnBack" data-lang="btnBack">Back</span>
+			</a><!--backbtn-->
+            <h1><span id='captionHeader'>Purchase</span></h1>
+			<a href="" id="btnNew" data-role="button" data-icon="plus"><span id="btnNew" data-lang="btnNew">New</span></a>
+        </div>
+		<div>
+            <h4 id="totalSearch" style="margin-right:20px;text-align: right;">Total : </h4>
+        </div>
+        <div id="purchase_list-content" data-role="content" style="margin-top: -20px;">
+           <ul data-role="listview" data-inset="true" id="lv-Purchase" data-filter="true">
+			<li>
+				<a href="#">
+				<h3>Amazon.com</h3>
+				<p><strong>4-for-3 Books for Kids</strong></p>
+				<!--p>As someone who has purchased children's books from our 4-for-3 Store, you may be interested in these featured books.</p>
+				<p class="ui-li-aside"><strong>12:47</strong>PM</p-->
+				</a>
+				</li>
+			<li>
+				<a href="#">
+				<h3>Mike Taylor</h3>
+				<p><strong>Re: This weekend in Maine</strong></p>
+				<!--p>Hey little buddy, sorry but I can't make it up to vacationland this weekend. Maybe next weekend?</p>
+				<p class="ui-li-aside"><strong>6:24</strong>AM</p-->
+				</a>
+			</li>
+			<li><a href="#">
+				<h3>Redfin</h3>
+				<p><strong>Redfin listing updates for today</strong></p>
+				<!--p>There are 3 updates for the home on your watchlist: 1 updated MLS listing and 2 homes under contract.</p>
+				<p class="ui-li-aside"><strong>5:52</strong>AM</p-->
+				</a>
+			</li>
+		   </ul>
+        </div>
+		<div data-role="footer" data-position="fixed">
+        </div>
+		<script src="controller/purchase_list.js" type="text/javascript"></script>
+    </div><!-- End Page div id="purchase_list" -->
+</body>
+</html>

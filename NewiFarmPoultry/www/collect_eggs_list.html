@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Collect Eggs</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="resource/css/jqm-docs.css" />
+    <link href="resource/css/themes/default/jquery.mobile-1.2.0.css" rel="stylesheet"
+        type="text/css" />
+    <link href="vendor/css/mobipick.css" rel="stylesheet" type="text/css" />
+    <link href="resource/css/themes/ios_inspired/styles.css" rel="stylesheet" type="text/css" />
+    <link href="resource/css/custom.css" rel="stylesheet" type="text/css" />
+    <link href="vendor/css/jquery.swipeButton-1.2.css"
+        rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="vendor/css/jquery-mobile-red-buttons.css" />
+    <script src="vendor/xdate.js" type="text/javascript"></script>
+    <script src="vendor/xdate.i18n.js" type="text/javascript"></script>
+    <script src="vendor/jquery-1.8.2.min.js" type="text/javascript"></script>
+    <script src="vendor/jquery-ui-1.9.1.custom.min.js" type="text/javascript"></script>
+    <script src="vendor/jquery.mobile-1.2.0.js" type="text/javascript"></script>    
+    <script src="vendor/jquery.swipeButton-1.2.1.min.js"
+        type="text/javascript"></script>
+    <script src="vendor/underscore.js" type="text/javascript"></script>
+    <script src="vendor/mobipick.js" type="text/javascript"></script>
+    <script type="text/javascript" src="resource/js/accounting.js"></script>
+    <script src="vendor/cordova-2.2.0.js" type="text/javascript"></script>
+    <script src="vendor/highcharts.js" type="text/javascript"></script>
+    <script src="vendor/barcodescanner.js" type="text/javascript"></script>
+    <script src="resource/js/DbConnector.js" type="text/javascript"></script>
+    <script src="resource/js/BO.js" type="text/javascript"></script>
+    <script src="resource/js/accounting.js" type="text/javascript"></script>
+    <script src="resource/js/Global.js" type="text/javascript"></script>
+    <script src="controller/farm_context.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $.Ctx.InitIndiviualPage();
+    </script>
+
+</head>
+<body>
+   
+    <div data-role="page" id="collect_eggs_list">
+        <script src="controller/collect_eggs_list.js" type="text/javascript"></script>
+        <!--header page -->
+        <div data-role="header" data-position="fixed">
+            <a data-back="true" data-theme="a"><span id="labBack">Back</span></a>
+
+            <h1><span data-lang='SaleListHead'>Collect Eggs</span></h1>
+            <a href="" id="btnNew" data-role="button" data-icon="plus"><span id="btnNew" data-lang="btnNew">New</span></a>
+
+        </div>
+
+
+        <div data-role="content" id="j1" name="mobilecontainer1" class="mobilecontainer1"
+             dsid="mobilecontainer1">
+
+            <div id="data-content"  >
+
+            </div>
+
+
+            <div data-role="footer" data-position="fixed">
+            <table style="padding: 0px; border-spacing: 0px">
+                <tr>
+                    <td style="width: 100%; padding: 0px">
+                        <p id="statusUserFullName" style="margin-left: 5px; margin-right: 5px; margin-top: 0px;
+                            margin-bottom: 0px;">
+                            <script type="text/javascript">
+                                $('#collect_eggs_list #statusUserFullName').html($.Ctx.UserFullName);
+                            </script>
+                        </p>
+                    </td>
+                    <td style="padding: 0px">
+                        <a data-role="button" data-icon="home" style="margin-left: 5px; margin-right: 5px;
+                            margin-top: 0px; margin-bottom: 0px;" onclick="$.Ctx.NavigatePage('home', { Previous: 'index' }, { transition: 'slide' });">
+                            <span id="btnHome" data-lang='btnHome'>Home</span></a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        </div>
+</body>
+</html>
